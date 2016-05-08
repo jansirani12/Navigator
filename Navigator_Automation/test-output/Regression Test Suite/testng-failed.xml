@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Regression Test Suite]">
+  <parameter name="browser" value="firefox"/>
+  <parameter name="url" value="https://navigatorstg.mcd.com"/>
+  <listeners>
+    <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+    <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+    <listener class-name="com.mcd.common.listeners.TestResultListener"/>
+  </listeners>
+  <test name="Navigator Application- FF(failed)">
+    <parameter name="browser" value="firefox"/>
+    <parameter name="url" value="https://navigatorstg.mcd.com"/>
+    <classes>
+      <class name="com.mcd.navigator.test.TestFranchiseNavigator">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="verifyDataEntityMeasures" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.mcd.navigator.test.TestFranchiseNavigator -->
+    </classes>
+  </test> <!-- Navigator Application- FF(failed) -->
+</suite> <!-- Failed suite [Regression Test Suite] -->

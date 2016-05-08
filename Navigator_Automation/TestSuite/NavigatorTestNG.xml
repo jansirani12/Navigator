@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Regression Test Suite" preserve-order="true">
+
+	<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+		<listener class-name="com.mcd.common.listeners.TestResultListener" />
+	</listeners>
+
+	<test name="Navigator Application- FF">
+		<parameter name="browser" value="firefox" />
+		<parameter name="url" value="https://navigatorstg.mcd.com" />
+		<classes>
+			<class name="com.mcd.navigator.test.TestFranchiseNavigator"/>
+			<class name="com.mcd.navigator.test.TestPMONavigator"/>
+		</classes>
+	</test>
+	
+	<!-- <test name="Navigator Application- CR">
+		<parameter name="browser" value="chrome" />
+		<parameter name="url" value="https://navigatorstg.mcd.com" />
+		<classes>
+			<class name="com.mcd.navigator.test.TestFranchiseNavigator"/>
+			<class name="com.mcd.navigator.test.TestPMONavigator"/>
+		</classes>
+	</test>
+	
+	<test name="Navigator Application- IE">
+		<parameter name="browser" value="internet-explorer" />
+		<parameter name="url" value="https://navigatorstg.mcd.com" />
+		<classes>
+			<class name="com.mcd.navigator.test.TestFranchiseNavigator"/>
+			<class name="com.mcd.navigator.test.TestPMONavigator"/>
+		</classes>
+	</test> -->
+
+</suite>
+

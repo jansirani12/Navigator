@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Navigator Application- FF"
+           tests="5"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="1688.196">
+  <properties />
+  
+  
+            <testcase name="verifyAtlantaRegioHeaderInBlader" time="255.571" classname="com.mcd.navigator.test.TestFranchiseNavigator" />
+                <testcase name="verifyDataEntityMeasures" time="621.657" classname="com.mcd.navigator.test.TestFranchiseNavigator" />
+                <testcase name="verifyUserIsOnFranchiseNavigatorLandingPage" time="273.936" classname="com.mcd.navigator.test.TestFranchiseNavigator" />
+                <testcase name="selectEntityAndVerifyEntityAreDisplayedInBlader" time="284.362" classname="com.mcd.navigator.test.TestFranchiseNavigator" />
+                <testcase name="selectZoneAndVerifyZonesAreDisplayedInBlader" time="252.670" classname="com.mcd.navigator.test.TestFranchiseNavigator" />
+      
+</testsuite>
