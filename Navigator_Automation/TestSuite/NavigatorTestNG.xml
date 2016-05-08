@@ -12,12 +12,8 @@
 		<parameter name="browser" value="firefox" />
 		<parameter name="url" value="https://navigatorstg.mcd.com" />
 		<classes>
-			<class name="com.mcd.navigator.test.TestFranchiseNavigator">
-				<methods>
-					<include name="verifyEastZoneHeaderInBlader"></include>
-				</methods>
-			</class>
-			<!-- <class name="com.mcd.navigator.test.TestPMONavigator"/> -->
+			<class name="com.mcd.navigator.test.TestFranchiseNavigator"/>
+			<class name="com.mcd.navigator.test.TestPMONavigator"/>
 		</classes>
 	</test>
 	
