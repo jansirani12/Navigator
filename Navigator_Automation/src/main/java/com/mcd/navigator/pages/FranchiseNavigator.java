@@ -33,69 +33,26 @@ public class FranchiseNavigator extends Common {
 				.click();
 		Reporter.log("List Of Franchise Navigator Drop Down Is clicked<br/>");
 	}
-	
+
 	public boolean isListOptionDisplayed(String listOption) {
 		wait.until(ExpectedConditions.presenceOfElementLocated(By
 				.xpath("//li[contains(text(),'" + listOption + "')]")));
 		Reporter.log("Verifying whether Region option is displayed in drop down<br/>");
-		return driver.findElement(By.xpath("//li[contains(text(),'" + listOption + "')]"))
-				.isDisplayed();
-	}
-
-	/*public boolean isRegionOptionDisplayed() {
-		wait.until(ExpectedConditions.presenceOfElementLocated(By
-				.xpath("//li[contains(text(),'Region')]")));
-		Reporter.log("Verifying whether Region option is displayed in drop down<br/>");
-		return driver.findElement(By.xpath("//li[contains(text(),'Region')]"))
-				.isDisplayed();
-	}
-
-	public boolean isZoneOptionDisplayed() {
-		wait.until(ExpectedConditions.presenceOfElementLocated(By
-				.xpath("//li[contains(text(),'Zone')]")));
-		Reporter.log("Verifying whether Zone option is displayed in drop down<br/>");
-		return driver.findElement(By.xpath("//li[contains(text(),'Zone')]"))
-				.isDisplayed();
-	}
-
-	public boolean isEntityOptionDisplayed() {
-		wait.until(ExpectedConditions.presenceOfElementLocated(By
-				.xpath("(//li[contains(text(),'Entity')])[1]")));
-		Reporter.log("Verifying whether Entity option is displayed in drop down<br/>");
 		return driver.findElement(
-				By.xpath("(//li[contains(text(),'Entity')])[1]")).isDisplayed();
-	}*/
+				By.xpath("//li[contains(text(),'" + listOption + "')]"))
+				.isDisplayed();
+	}
 
 	public void selectListOptionFromDropDownInBladder(String listOption) {
-		/*Select selectDropDown = new Select(driver.findElement(By
-				.xpath("//div[@blade-id='blade1']/span/select")));
-		selectDropDown.selectByVisibleText(listOption);*/
 		clickOnListInDropDownInBladder();
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//li[contains(text(),'" + listOption + "')]")));
-		driver.findElement(By.xpath("//li[contains(text(),'" + listOption + "')]")).click();
-		Reporter.log("Select the value " + listOption + " from the List drop down<br/>");
+		wait.until(ExpectedConditions.elementToBeClickable(By
+				.xpath("//li[contains(text(),'" + listOption + "')]")));
+		driver.findElement(
+				By.xpath("//li[contains(text(),'" + listOption + "')]"))
+				.click();
+		Reporter.log("Select the value " + listOption
+				+ " from the List drop down<br/>");
 	}
-
-	/*
-	 * public void selectRegionOptionFromDropDown() {
-	 * wait.until(ExpectedConditions.elementToBeClickable(By
-	 * .xpath("//li[contains(text(),'Region')]")));
-	 * driver.findElement(By.xpath("//li[contains(text(),'Region')]")).click();
-	 * Reporter.log("Region is selected from Drop down<br/>"); }
-	 * 
-	 * public void listOfFranchiseNavigatorDropDown() {
-	 * wait.until(ExpectedConditions.elementToBeClickable(By
-	 * .xpath("(//span[@class='k-icon k-i-arrow-s'])[3]"))); sleep(1000);
-	 * driver.findElement(By.xpath("(//span[@class='k-icon k-i-arrow-s'])[3]"))
-	 * .click();
-	 * Reporter.log("List Of Franchise Navigator Drop Down Is Clicked<br/>"); }
-	 * 
-	 * public WebElement regionOptionISDisplayedInDropDown() {
-	 * wait.until(ExpectedConditions.elementToBeClickable(By
-	 * .xpath("//li[contains(text(),'Region')]")));
-	 * Reporter.log("Region option is displayed in drop down<br/>"); return
-	 * driver.findElement(By.xpath("//li[contains(text(),'Region')]")); }
-	 */
 
 	@FindBy(xpath = "//li[contains(text(),'Zone')]")
 	public WebElement zone;
@@ -115,16 +72,7 @@ public class FranchiseNavigator extends Common {
 		Reporter.log("Entity is selected from drop down<br/>");
 	}
 
-	/*
-	 * @FindBy(xpath = "(//input[@class='openImageBtn fa-lg'])[1]") public
-	 * WebElement regionAtlanta;
-	 * 
-	 * public void clickOnRegionAtlanta() {
-	 * wait.until(ExpectedConditions.elementToBeClickable(regionAtlanta));
-	 * regionAtlanta.click(); Reporter.log("Atlanta Region is clicked<br/>"); }
-	 */
-
-	public void clickOnSpecificRegion(String regionName) {
+	public void clickOnSpecificResultInGrid(String regionName) {
 		wait.until(ExpectedConditions.elementToBeClickable(driver
 				.findElement(By.xpath("//span[contains(text(),'" + regionName
 						+ "')]/ancestor::tr[1]/td/input"))));
@@ -227,17 +175,6 @@ public class FranchiseNavigator extends Common {
 	@FindBy(xpath = "//span[contains(text(),'ACRE, EDWARD')]")
 	public WebElement entity_Acre_Edwars;
 
-	/*
-	 * public void clickDropDownInFilter(int dropdownIndex) {
-	 * Reporter.log("Click on the " + dropdownIndex + " drop down<br/>");
-	 * wait.until(ExpectedConditions.elementToBeClickable(By
-	 * .xpath("//form[contains(@class,'filter-menu')]//div/span[" +
-	 * dropdownIndex + "]//span[contains(@class,'icon')]"))); sleep(500);
-	 * driver.findElement(
-	 * By.xpath("//form[contains(@class,'filter-menu')]//div/span[" +
-	 * dropdownIndex + "]//span[contains(@class,'icon')]")) .click(); }
-	 */
-
 	public void selectValueFromDropDownInFilter(int dropdownIndex,
 			String dropdownValue) {
 		Select selectDropDown = new Select(driver.findElement(By
@@ -315,28 +252,10 @@ public class FranchiseNavigator extends Common {
 		Reporter.log("Data Drop Down is clicked<br/>");
 	}
 
-	/*public void selectOptionFromDataDropDown(String dataOptions) {
-		clickOnDataDropDown();
-		wait.until(ExpectedConditions.elementToBeClickable(By
-				.xpath("//li[contains(text(),'" + dataOptions + "')]")));
-		driver.findElement(
-				By.xpath("//li[contains(text(),'" + dataOptions + "')]"))
-				.click();
-		Reporter.log("Entity Name was displayed in blader as expected-'"
-				+ dataOptions + "'<br>");
-		Assert.assertEquals(
-				driver.findElement(
-						By.xpath("//li[contains(text(),'" + dataOptions + "')]"))
-						.getText().trim(), dataOptions);
-	}*/
-	
 	public void verifyOptionFromDataDropDown(String dataOptions) {
 		clickOnDataDropDown();
 		wait.until(ExpectedConditions.elementToBeClickable(By
 				.xpath("//li[contains(text(),'" + dataOptions + "')]")));
-//		driver.findElement(
-//				By.xpath("//li[contains(text(),'" + dataOptions + "')]"))
-//				.click();
 		Assert.assertEquals(
 				driver.findElement(
 						By.xpath("//li[contains(text(),'" + dataOptions + "')]"))

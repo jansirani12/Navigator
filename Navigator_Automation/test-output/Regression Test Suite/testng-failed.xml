@@ -14,9 +14,7 @@
     <classes>
       <class name="com.mcd.navigator.test.TestFranchiseNavigator">
         <methods>
-          <include name="setUp"/>
-          <include name="tearDown"/>
-          <include name="verifyDataEntityMeasures" invocation-numbers="0"/>
+          <include name="verifyEastZoneHeaderInBlader"/>
         </methods>
       </class> <!-- com.mcd.navigator.test.TestFranchiseNavigator -->
     </classes>
