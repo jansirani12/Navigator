@@ -21,7 +21,7 @@ public class TestFranchiseNavigator extends PageObjects {
 		navigate(url);
 	}
 
-	@Test(testName = "Verify that Franchise Navigator is selected", description = "Verify that user is abe to navigate into Franchise Navigator Landing page", dataProvider = "TC_01", dataProviderClass = LoginPageData.class, priority = 0)
+	@Test(testName = "Verify that Franchise Navigator is selected", description = "Verify that user is abe to navigate into Franchise Navigator Landing page", dataProvider = "TC_01", dataProviderClass = LoginPage_DataProvider.class, priority = 0)
 	@TestInfo(testCaseID = "TC 01", testCaseDescription = "Verify that user is abe to navigate into Franchise Navigator Landing page")
 	public void verifyUserIsOnFranchiseNavigatorLandingPage(LoginPageData data) {
 		// Login into the application
@@ -102,7 +102,7 @@ public class TestFranchiseNavigator extends PageObjects {
 				.verifyFilterValueDisplaysAfterApplyingFilter("HEARTLAND");
 	}
 
-	@Test(testName = "Select Zone from Franchise navigator list and verify the zone's got displayed in first blader", description = "Select Zone from Franchise navigator list and verify the zone's got displayed in first blader", dataProvider = "TC_01", dataProviderClass = LoginPageData.class, priority = 1)
+	@Test(testName = "Select Zone from Franchise navigator list and verify the zone's got displayed in first blader", description = "Select Zone from Franchise navigator list and verify the zone's got displayed in first blader", dataProvider = "TC_01", dataProviderClass = LoginPage_DataProvider.class, priority = 1)
 	@TestInfo(testCaseID = "TC 03", testCaseDescription = "Select Zone from Franchise navigator list and verify the zone's got displayed in first blader")
 	public void selectZoneAndVerifyZonesAreDisplayedInBlader(LoginPageData data) {
 		// Login into the application
@@ -136,7 +136,7 @@ public class TestFranchiseNavigator extends PageObjects {
 				"Experience of the Future is not displayed in blader");
 	}
 
-	@Test(testName = "Select Zone from Franchise navigator list and verify the zone's got displayed in first blader", description = "Select Zone from Franchise navigator list and verify the zone's got displayed in first blader", dataProvider = "TC_01", dataProviderClass = LoginPageData.class, priority = 2)
+	@Test(testName = "Select Zone from Franchise navigator list and verify the zone's got displayed in first blader", description = "Select Zone from Franchise navigator list and verify the zone's got displayed in first blader", dataProvider = "TC_01", dataProviderClass = LoginPage_DataProvider.class, priority = 2)
 	@TestInfo(testCaseID = "TC 04", testCaseDescription = "Select Zone from Franchise navigator list and verify the zone's got displayed in first blader")
 	public void selectEntityAndVerifyEntityAreDisplayedInBlader(
 			LoginPageData data) {
@@ -185,7 +185,7 @@ public class TestFranchiseNavigator extends PageObjects {
 				"ACRE,EDWARS is not displayed");
 	}
 
-	@Test(testName = "Verify whether Data Entity Measures is displayed in drop down", description = "Verify whether Data Entity Measures is displayed in drop doen", dataProvider = "TC_01", dataProviderClass = LoginPageData.class, priority = 3)
+	@Test(testName = "Verify whether Data Entity Measures is displayed in drop down", description = "Verify whether Data Entity Measures is displayed in drop doen", dataProvider = "TC_01", dataProviderClass = LoginPage_DataProvider.class, priority = 3)
 	@TestInfo(testCaseID = "TC 05", testCaseDescription = "Verify whether Data Entity Measures is displayed in drop down")
 	public void verifyDataEntityMeasures(LoginPageData data) {
 		// Login into the application
@@ -213,7 +213,7 @@ public class TestFranchiseNavigator extends PageObjects {
 				"Business Review");
 	}
 
-	@Test(testName = "Verify that Atlanta Region is selected", description = "Verify that user is abe to Atlanda Region in second lavel blader", dataProvider = "TC_01", dataProviderClass = LoginPageData.class, priority = 4)
+	@Test(testName = "Verify that Atlanta Region is selected", description = "Verify that user is abe to Atlanda Region in second lavel blader", dataProvider = "TC_01", dataProviderClass = LoginPage_DataProvider.class, priority = 4)
 	@TestInfo(testCaseID = "TC 02", testCaseDescription = "Verify that user is able to view Atlanta in second lavel blader")
 	public void verifyAtlantaRegioHeaderInBlader(LoginPageData data) {
 		// Login into the application
@@ -225,12 +225,34 @@ public class TestFranchiseNavigator extends PageObjects {
 		getFranchiseNavigator(driver).selectListOptionFromDropDownInBladder(
 				"Region");
 		// Select the Region as Atlanta
-		getFranchiseNavigator(driver).clickOnSpecificRegion("ATLANTA");
+		getFranchiseNavigator(driver).clickOnSpecificResultInGrid("ATLANTA");
 		// Verify whether the region name is displayed in the second level
 		// bladder
 		Assert.assertTrue(getFranchiseNavigator(driver)
 				.verifyRegionOpenedInNewBlade("ATLANTA"),
 				"ATLANTA Region Blade is not opened in second level blader");
+		// Close the second blade opened
+		getFranchiseNavigator(driver).closeBlade(2);
+	}
+
+	@Test(testName = "CliCk on East Zone in Blader one and verify East Zone is displayed in Header in Blader2", description = "Clcik on East Zone in Blader one and verify East Zone is displayed in Header in Blader2", dataProvider = "TC_01", dataProviderClass = LoginPage_DataProvider.class, priority = 5)
+	@TestInfo(testCaseID = "TC 06", testCaseDescription = "Select Zone from Franchise navigator list and verify the zone's got displayed in first blader")
+	public void verifyEastZoneHeaderInBlader(LoginPageData data) {
+		// Login into the application
+		getLoginPage(driver).loginIntoApplication(data.getUserName(),
+				data.getPassWord());
+		// Navigate to Franchise Navigator
+		getHomePage(driver).clickOnNavigatorDropDown("Franchise Navigator");
+		// select Zone from drop down
+		getFranchiseNavigator(driver).selectListOptionFromDropDownInBladder(
+				"Zone");
+		// select East Zone from the result grid in the bladder
+		getFranchiseNavigator(driver).clickOnSpecificResultInGrid("East");
+		// Verify whether the East Zone Header is displayed in the second level
+		// bladder
+		Assert.assertTrue(getFranchiseNavigator(driver)
+				.verifyRegionOpenedInNewBlade("East Zone"),
+				"East Zone was not displayed in the ");
 		// Close the second blade opened
 		getFranchiseNavigator(driver).closeBlade(2);
 	}
