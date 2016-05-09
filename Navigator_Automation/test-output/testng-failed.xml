@@ -14,9 +14,20 @@
     <classes>
       <class name="com.mcd.navigator.test.TestFranchiseNavigator">
         <methods>
-          <include name="verifyEastZoneHeaderInBlader"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="verifyUserIsOnFranchiseNavigatorLandingPage" invocation-numbers="0"/>
         </methods>
       </class> <!-- com.mcd.navigator.test.TestFranchiseNavigator -->
+      <class name="com.mcd.navigator.test.TestPMONavigator">
+        <methods>
+          <include name="tearDown"/>
+          <include name="verifyAllBladeLevelsForPMOZone" invocation-numbers="0"/>
+          <include name="setUp"/>
+          <include name="verifyAlBladesForPMODevelopmentGroup" invocation-numbers="0"/>
+          <include name="verifyAlBladesForPMODivision" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.mcd.navigator.test.TestPMONavigator -->
     </classes>
   </test> <!-- Navigator Application- FF(failed) -->
 </suite> <!-- Failed suite [Regression Test Suite] -->

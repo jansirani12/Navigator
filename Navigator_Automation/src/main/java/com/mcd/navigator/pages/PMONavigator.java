@@ -82,12 +82,14 @@ public class PMONavigator extends Common {
 	}
 
 	public void clickListDropDownArrowPMO() {
-		driver.findElement(By.xpath("(//span[@class='k-icon k-i-arrow-s'])[7]"))
+		sleep(5000);
+		driver.findElement(By.xpath("//span[@class='k-widget k-dropdown k-header groupFilter']/span/span[2]"))
 				.isDisplayed();
 		wait.until(ExpectedConditions.elementToBeClickable(driver
 				.findElement(By
-						.xpath("(//span[@class='k-icon k-i-arrow-s'])[7]"))));
-		driver.findElement(By.xpath("(//span[@class='k-icon k-i-arrow-s'])[7]"))
+						.xpath("//span[@class='k-widget k-dropdown k-header groupFilter']/span/span[2]"))));
+		sleep(2000);
+		driver.findElement(By.xpath("//span[@class='k-widget k-dropdown k-header groupFilter']/span/span[2]"))
 				.click();
 	}
 
@@ -97,10 +99,11 @@ public class PMONavigator extends Common {
 				.isDisplayed();
 		wait.until(ExpectedConditions.elementToBeClickable(By
 				.xpath("//li[(text()='" + listDropDownOption + "')]")));
+		sleep(2000);
 		driver.findElement(
 				By.xpath("//li[(text()='" + listDropDownOption + "')]"))
 				.click();
-		waitForPageLoadOffshore();
+		//waitForPageLoadOffshore();
 	}
 
 	public void clickZonePMO(String zoneNumber) {
@@ -110,10 +113,11 @@ public class PMONavigator extends Common {
 		wait.until(ExpectedConditions.elementToBeClickable(driver
 				.findElement(By.xpath("//tbody[@role='rowgroup']/tr["
 						+ zoneNumber + "]/td[1]"))));
+		sleep(5000);
 		driver.findElement(
 				By.xpath("//tbody[@role='rowgroup']/tr[" + zoneNumber
 						+ "]/td[1]")).click();
-		waitForPageLoadOffshore();
+		//waitForPageLoadOffshore();
 	}
 
 	public void clickRegionPMO(String RegionNumber) {
@@ -123,10 +127,11 @@ public class PMONavigator extends Common {
 		wait.until(ExpectedConditions.elementToBeClickable(driver
 				.findElement(By.xpath("//tbody[@role='rowgroup']/tr["
 						+ RegionNumber + "]/td[1]/input"))));
+		sleep(5000);
 		driver.findElement(
 				By.xpath("//tbody[@role='rowgroup']/tr[" + RegionNumber
 						+ "]/td[1]/input")).click();
-		waitForPageLoadOffshore();
+		//waitForPageLoadOffshore();
 	}
 
 	public void clickMiniMarketPMO(String MiniMarketNumber) {
@@ -136,10 +141,11 @@ public class PMONavigator extends Common {
 		wait.until(ExpectedConditions.elementToBeClickable(By
 				.xpath("//tbody[@role='rowgroup']/tr[" + MiniMarketNumber
 						+ "]/td[1]")));
+		sleep(5000);
 		driver.findElement(
 				By.xpath("//tbody[@role='rowgroup']/tr[" + MiniMarketNumber
 						+ "]/td[1]")).click();
-		waitForPageLoadOffshore();
+		//waitForPageLoadOffshore();
 	}
 
 	public void clickMCDSitesPMO(String MCDSiteNumber) {
@@ -149,10 +155,11 @@ public class PMONavigator extends Common {
 		wait.until(ExpectedConditions.elementToBeClickable(By
 				.xpath("(//tbody[@role='rowgroup']/tr[" + MCDSiteNumber
 						+ "]/td[1]/input)[1]")));
+		sleep(5000);
 		driver.findElement(
 				By.xpath("(//tbody[@role='rowgroup']/tr[" + MCDSiteNumber
 						+ "]/td[1]/input)[1]")).click();
-		waitForPageLoadOffshore();
+		//waitForPageLoadOffshore();
 	}
 
 	// div[@id='blade1Grid']/div[3]/table/tbody/tr[1]/td[1]/input
@@ -164,10 +171,11 @@ public class PMONavigator extends Common {
 		wait.until(ExpectedConditions.elementToBeClickable(By
 				.xpath("//div[@id='blade1Grid']/div[3]/table/tbody/tr["
 						+ DevGroupNumber + "]/td[1]/input")));
+		sleep(5000);
 		driver.findElement(
 				By.xpath("//div[@id='blade1Grid']/div[3]/table/tbody/tr["
 						+ DevGroupNumber + "]/td[1]/input")).click();
-		waitForPageLoadOffshore();
+		//waitForPageLoadOffshore();
 	}
 
 	public void clickEntityPMO(String EntityNumber) {
@@ -177,10 +185,11 @@ public class PMONavigator extends Common {
 		wait.until(ExpectedConditions.elementToBeClickable(By
 				.xpath("//div[@id='blade2Grid']/div[3]/table/tbody/tr["
 						+ EntityNumber + "]/td[1]/input")));
+		sleep(5000);
 		driver.findElement(
 				By.xpath("//div[@id='blade2Grid']/div[3]/table/tbody/tr["
 						+ EntityNumber + "]/td[1]/input")).click();
-		waitForPageLoadOffshore();
+		//waitForPageLoadOffshore();
 	}
 
 	public void clickOperatorPMO(String OperatorNumber) {
@@ -190,10 +199,11 @@ public class PMONavigator extends Common {
 		wait.until(ExpectedConditions.elementToBeClickable(By
 				.xpath("//div[@id='blade3Grid']/div[3]/table/tbody/tr["
 						+ OperatorNumber + "]/td[1]/input")));
+		sleep(5000);
 		driver.findElement(
 				By.xpath("//div[@id='blade3Grid']/div[3]/table/tbody/tr["
 						+ OperatorNumber + "]/td[1]/input")).click();
-		waitForPageLoadOffshore();
+		//waitForPageLoadOffshore();
 	}
 
 	public void clickMcdSitesDevGrpPMO(String SiteNumber) {
@@ -203,10 +213,11 @@ public class PMONavigator extends Common {
 		wait.until(ExpectedConditions.elementToBeClickable(By
 				.xpath("//div[@id='blade4Grid']/div[3]/table/tbody/tr["
 						+ SiteNumber + "]/td[1]/input")));
+		sleep(5000);
 		driver.findElement(
 				By.xpath("//div[@id='blade4Grid']/div[3]/table/tbody/tr["
 						+ SiteNumber + "]/td[1]/input")).click();
-		waitForPageLoadOffshore();
+		//waitForPageLoadOffshore();
 	}
 
 	public void foucsAndClickMapMarker(String MarkerID) {
@@ -223,10 +234,11 @@ public class PMONavigator extends Common {
 				.xpath("//div[@id='map-canvas']"
 						+ "/div/div[1]/div[3]/div[1]/div[@id='" + MarkerID
 						+ "']")));
+		sleep(5000);
 		driver.findElement(
 				By.xpath("//div[@id='map-canvas']/div/div[1]/div[3]/div[1]/div[@id='"
 						+ MarkerID + "']")).click();
-		waitForPageLoadOffshore();
+		//waitForPageLoadOffshore();
 	}
 
 	public void clickDivisionPMO(String DivisionNumber) {
@@ -236,10 +248,11 @@ public class PMONavigator extends Common {
 		wait.until(ExpectedConditions.elementToBeClickable(By
 				.xpath("//div[@id='blade1Grid']/div[3]/table/tbody/tr["
 						+ DivisionNumber + "]/td[1]/input")));
+		sleep(5000);
 		driver.findElement(
 				By.xpath("//div[@id='blade1Grid']/div[3]/table/tbody/tr["
 						+ DivisionNumber + "]/td[1]/input")).click();
-		waitForPageLoadOffshore();
+		//waitForPageLoadOffshore();
 	}
 
 	public void clickRegionOfDivisionPMO(String RegionNUmber) {
@@ -249,10 +262,11 @@ public class PMONavigator extends Common {
 		wait.until(ExpectedConditions.elementToBeClickable(By
 				.xpath("//div[@id='blade2Grid']/div[3]/table/tbody/tr["
 						+ RegionNUmber + "]/td[1]/input")));
+		sleep(5000);
 		driver.findElement(
 				By.xpath("//div[@id='blade2Grid']/div[3]/table/tbody/tr["
 						+ RegionNUmber + "]/td[1]/input")).click();
-		waitForPageLoadOffshore();
+		//waitForPageLoadOffshore();
 	}
 
 	public void clickMiniMarketDivisionPMO(String MiniMarketNumber) {
@@ -262,10 +276,11 @@ public class PMONavigator extends Common {
 		wait.until(ExpectedConditions.elementToBeClickable(By
 				.xpath("//div[@id='blade3Grid']/div[3]/table/tbody/tr["
 						+ MiniMarketNumber + "]/td[1]/input")));
+		sleep(5000);
 		driver.findElement(
 				By.xpath("//div[@id='blade3Grid']/div[3]/table/tbody/tr["
 						+ MiniMarketNumber + "]/td[1]/input")).click();
-		waitForPageLoadOffshore();
+		//waitForPageLoadOffshore();
 
 	}
 
@@ -276,9 +291,10 @@ public class PMONavigator extends Common {
 		wait.until(ExpectedConditions.elementToBeClickable(By
 				.xpath("//div[@id='blade4Grid']/div[3]/table/tbody/tr["
 						+ MCDSiteNumber + "]/td[1]/input")));
+		sleep(5000);
 		driver.findElement(
 				By.xpath("//div[@id='blade4Grid']/div[3]/table/tbody/tr["
 						+ MCDSiteNumber + "]/td[1]/input")).click();
-		waitForPageLoadOffshore();
+		//waitForPageLoadOffshore();
 	}
 }

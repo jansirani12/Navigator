@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" total="3" passed="3">
   <reporter-output>
     <line>
       <![CDATA[Enter user name as 'etst0028'<br/>]]>
@@ -14,36 +14,45 @@
       <![CDATA[Navigator Drop Down Clicked<br/>]]>
     </line>
     <line>
-      <![CDATA[Click on Navigator Drop Down Icon<br>]]>
+      <![CDATA[Navigator Drop Down Clicked<br/>]]>
     </line>
     <line>
-      <![CDATA[Verifying whether the navigator option 'Franchise Navigator' was present in the dropdown<br>]]>
+      <![CDATA[Enter user name as 'etst0028'<br/>]]>
     </line>
     <line>
-      <![CDATA[Select the Franchise Navigator option as Franchise Navigator<br>]]>
+      <![CDATA[Enter password as 'Marc2016'<br/>]]>
     </line>
     <line>
-      <![CDATA[List Of Franchise Navigator Drop Down Is clicked<br/>]]>
+      <![CDATA[Click on login button<br/>]]>
     </line>
     <line>
-      <![CDATA[Select the value Zone from the List drop down<br/>]]>
+      <![CDATA[Navigator Drop Down Clicked<br/>]]>
     </line>
     <line>
-      <![CDATA[Click on the region - East<br/>]]>
+      <![CDATA[Navigator Drop Down Clicked<br/>]]>
     </line>
     <line>
-      <![CDATA[Verify whether the region name 'East Zone' is displayed in the second level bladder<br/>]]>
+      <![CDATA[Enter user name as 'etst0028'<br/>]]>
     </line>
     <line>
-      <![CDATA[Close the blade '2'<br/>]]>
+      <![CDATA[Enter password as 'Marc2016'<br/>]]>
+    </line>
+    <line>
+      <![CDATA[Click on login button<br/>]]>
+    </line>
+    <line>
+      <![CDATA[Navigator Drop Down Clicked<br/>]]>
+    </line>
+    <line>
+      <![CDATA[Navigator Drop Down Clicked<br/>]]>
     </line>
   </reporter-output>
-  <suite name="Regression Test Suite" duration-ms="288183" started-at="2016-05-08T18:22:53Z" finished-at="2016-05-08T18:27:42Z">
+  <suite name="Regression Test Suite" duration-ms="391620" started-at="2016-05-09T16:13:33Z" finished-at="2016-05-09T16:20:05Z">
     <groups>
     </groups>
-    <test name="Navigator Application- FF" duration-ms="288183" started-at="2016-05-08T18:22:53Z" finished-at="2016-05-08T18:27:42Z">
-      <class name="com.mcd.navigator.test.TestFranchiseNavigator">
-        <test-method status="PASS" signature="setUp(java.lang.String, java.lang.String)[pri:0, instance:com.mcd.navigator.test.TestFranchiseNavigator@1629756]" name="setUp" is-config="true" duration-ms="28349" started-at="2016-05-08T23:52:54Z" finished-at="2016-05-08T23:53:22Z">
+    <test name="Navigator Application- FF" duration-ms="391620" started-at="2016-05-09T16:13:33Z" finished-at="2016-05-09T16:20:05Z">
+      <class name="com.mcd.navigator.test.TestPMONavigator">
+        <test-method status="PASS" signature="setUp(java.lang.String, java.lang.String)[pri:0, instance:com.mcd.navigator.test.TestPMONavigator@7e0b0338]" name="setUp" is-config="true" duration-ms="4770" started-at="2016-05-09T11:13:34Z" finished-at="2016-05-09T11:13:38Z">
           <params>
             <param index="0">
               <value>
@@ -59,11 +68,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="verifyEastZoneHeaderInBlader(com.mcd.navigator.excelutils.LoginPageData)[pri:0, instance:com.mcd.navigator.test.TestFranchiseNavigator@1629756]" name="verifyEastZoneHeaderInBlader" duration-ms="257976" started-at="2016-05-08T23:53:22Z" description="Clcik on East Zone in Blader one and verify East Zone is displayed in Header in Blader2" data-provider="TC_01" finished-at="2016-05-08T23:57:40Z">
+        <test-method status="PASS" signature="verifyAllBladeLevelsForPMOZone(com.mcd.navigator.excelutils.LoginPageData)[pri:0, instance:com.mcd.navigator.test.TestPMONavigator@7e0b0338]" name="verifyAllBladeLevelsForPMOZone" duration-ms="122000" started-at="2016-05-09T11:13:38Z" description="Verify that user is able to Navigate to all Blade Levels when Zone has been selected in PMO Navigator" data-provider="TC_01" finished-at="2016-05-09T11:15:40Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[com.mcd.navigator.excelutils.LoginPageData@137c201]]>
+                <![CDATA[com.mcd.navigator.excelutils.LoginPageData@6ee4d9ab]]>
               </value>
             </param>
           </params>
@@ -81,36 +90,107 @@
               <![CDATA[Navigator Drop Down Clicked<br/>]]>
             </line>
             <line>
-              <![CDATA[Click on Navigator Drop Down Icon<br>]]>
-            </line>
-            <line>
-              <![CDATA[Verifying whether the navigator option 'Franchise Navigator' was present in the dropdown<br>]]>
-            </line>
-            <line>
-              <![CDATA[Select the Franchise Navigator option as Franchise Navigator<br>]]>
-            </line>
-            <line>
-              <![CDATA[List Of Franchise Navigator Drop Down Is clicked<br/>]]>
-            </line>
-            <line>
-              <![CDATA[Select the value Zone from the List drop down<br/>]]>
-            </line>
-            <line>
-              <![CDATA[Click on the region - East<br/>]]>
-            </line>
-            <line>
-              <![CDATA[Verify whether the region name 'East Zone' is displayed in the second level bladder<br/>]]>
-            </line>
-            <line>
-              <![CDATA[Close the blade '2'<br/>]]>
+              <![CDATA[Navigator Drop Down Clicked<br/>]]>
             </line>
           </reporter-output>
-        </test-method> <!-- verifyEastZoneHeaderInBlader -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.mcd.navigator.test.TestFranchiseNavigator@1629756]" name="tearDown" is-config="true" duration-ms="1272" started-at="2016-05-08T23:57:40Z" finished-at="2016-05-08T23:57:42Z">
+        </test-method> <!-- verifyAllBladeLevelsForPMOZone -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.mcd.navigator.test.TestPMONavigator@7e0b0338]" name="tearDown" is-config="true" duration-ms="979" started-at="2016-05-09T11:15:41Z" finished-at="2016-05-09T11:15:42Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.mcd.navigator.test.TestFranchiseNavigator -->
+        <test-method status="PASS" signature="setUp(java.lang.String, java.lang.String)[pri:0, instance:com.mcd.navigator.test.TestPMONavigator@7e0b0338]" name="setUp" is-config="true" duration-ms="4299" started-at="2016-05-09T11:15:42Z" finished-at="2016-05-09T11:15:46Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://navigatorstg.mcd.com]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="verifyAlBladesForPMODevelopmentGroup(com.mcd.navigator.excelutils.LoginPageData)[pri:0, instance:com.mcd.navigator.test.TestPMONavigator@7e0b0338]" name="verifyAlBladesForPMODevelopmentGroup" duration-ms="129983" started-at="2016-05-09T11:15:46Z" description="Verify that user is able to Navigate to all Blade Levels when Development Group has been selected in PMO Navigator" data-provider="TC_01" finished-at="2016-05-09T11:17:56Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[com.mcd.navigator.excelutils.LoginPageData@241e8ea6]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[Enter user name as 'etst0028'<br/>]]>
+            </line>
+            <line>
+              <![CDATA[Enter password as 'Marc2016'<br/>]]>
+            </line>
+            <line>
+              <![CDATA[Click on login button<br/>]]>
+            </line>
+            <line>
+              <![CDATA[Navigator Drop Down Clicked<br/>]]>
+            </line>
+            <line>
+              <![CDATA[Navigator Drop Down Clicked<br/>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- verifyAlBladesForPMODevelopmentGroup -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.mcd.navigator.test.TestPMONavigator@7e0b0338]" name="tearDown" is-config="true" duration-ms="1374" started-at="2016-05-09T11:17:56Z" finished-at="2016-05-09T11:17:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp(java.lang.String, java.lang.String)[pri:0, instance:com.mcd.navigator.test.TestPMONavigator@7e0b0338]" name="setUp" is-config="true" duration-ms="3919" started-at="2016-05-09T11:17:58Z" finished-at="2016-05-09T11:18:02Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://navigatorstg.mcd.com]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="verifyAlBladesForPMODivision(com.mcd.navigator.excelutils.LoginPageData)[pri:0, instance:com.mcd.navigator.test.TestPMONavigator@7e0b0338]" name="verifyAlBladesForPMODivision" duration-ms="121583" started-at="2016-05-09T11:18:02Z" description="Verify that user is able to Navigate to all Blade Levels when Division has been selected in PMO Navigator" data-provider="TC_01" finished-at="2016-05-09T11:20:03Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[com.mcd.navigator.excelutils.LoginPageData@6b98a075]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[Enter user name as 'etst0028'<br/>]]>
+            </line>
+            <line>
+              <![CDATA[Enter password as 'Marc2016'<br/>]]>
+            </line>
+            <line>
+              <![CDATA[Click on login button<br/>]]>
+            </line>
+            <line>
+              <![CDATA[Navigator Drop Down Clicked<br/>]]>
+            </line>
+            <line>
+              <![CDATA[Navigator Drop Down Clicked<br/>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- verifyAlBladesForPMODivision -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.mcd.navigator.test.TestPMONavigator@7e0b0338]" name="tearDown" is-config="true" duration-ms="1519" started-at="2016-05-09T11:20:04Z" finished-at="2016-05-09T11:20:05Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.mcd.navigator.test.TestPMONavigator -->
     </test> <!-- Navigator Application- FF -->
   </suite> <!-- Regression Test Suite -->
 </testng-results>

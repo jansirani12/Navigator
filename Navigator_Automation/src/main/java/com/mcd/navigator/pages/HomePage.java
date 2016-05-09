@@ -46,23 +46,16 @@ public class HomePage extends Common {
 	}
 
 	public void resetAppToPMONavigator() {
-		driver.findElement(
-				By.xpath("//div[@class="
-						+ "'indicator']//span/span[@class='ng-binding']"))
-				.isDisplayed();
-		wait.until(ExpectedConditions.elementToBeClickable(By
-				.xpath("//div[@class='indicator']//span/span[@class='ng-binding']")));
-		driver.findElement(
-				By.xpath("//div[@class='indicator']//span/span[@class='ng-binding']"))
-				.click();
-		WebElement elm1 = driver
-				.findElement(By
-						.xpath("//div[@class='indicator']//span/span[@class='ng-binding']"));
-
-		String SelectedItem = elm1.getText().trim();
-		if (SelectedItem == "PMO Navigator") {
-			// Do nothing
-		} else {
+		
+			clickNavigatorDropDown();
+			driver.findElement(
+					By.xpath("//span[contains(text(), 'Franchise Navigator')]"))
+					.isDisplayed();
+			wait.until(ExpectedConditions.elementToBeClickable(By
+					.xpath("//span[contains(text(), 'Franchise Navigator')]")));
+			driver.findElement(
+					By.xpath("//span[contains(text(), 'Franchise Navigator')]"))
+					.click();
 			clickNavigatorDropDown();
 			driver.findElement(
 					By.xpath("//span[contains(text(), 'PMO Navigator')]"))
@@ -72,8 +65,5 @@ public class HomePage extends Common {
 			driver.findElement(
 					By.xpath("//span[contains(text(), 'PMO Navigator')]"))
 					.click();
-			waitForPageLoadOffshore();
-		}
-
-	}
+			}
 }

@@ -10,7 +10,7 @@
 	<classpathentry kind="lib" path="LibraryFiles/testng-6.8.5.jar"/>
 	<classpathentry kind="lib" path="LibraryFiles/velocity-dep-1.4.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="LibraryFiles/selenium-java-2.53.0.jar"/>
-	<classpathentry kind="lib" path="LibraryFiles/selenium-server-standalone-2.53.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/mc29012/Desktop/Selenium Jars/selenium-java-2.46.0-srcs.jar"/>
+	<classpathentry kind="lib" path="C:/Users/mc29012/Desktop/Selenium Jars/selenium-server-standalone-2.46.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
