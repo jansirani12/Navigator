@@ -22,7 +22,7 @@ public class TestPMONavigator extends PageObjects {
 		navigate(url);
 	}
 
-	@Test(testName = "Verify all the Elements are present on PMO Navigator Landing Page", description = "Logininto PMO Navigator Home Page", dataProvider = "TC_01", dataProviderClass = LoginPage_DataProvider.class, priority = 0)
+	/*@Test(testName = "Verify all the Elements are present on PMO Navigator Landing Page", description = "Logininto PMO Navigator Home Page", dataProvider = "TC_01", dataProviderClass = LoginPage_DataProvider.class, priority = 0)
 	@TestInfo(testCaseID = "TC_01", testCaseDescription = "Logininto PMO Navigator Home Page")
 	public void verifyPMONavigatorOptionOnLandingPage(LoginPageData data) {
 		// Login into the application
@@ -33,8 +33,6 @@ public class TestPMONavigator extends PageObjects {
 		Assert.assertEquals(getPMONavigator(driver).pmoNavigatorIsSelected
 				.getText().trim(), "PMO Navigator");
 		Reporter.log("PMO Navigator option is present and selected on the Page");
-		// Assert.assertTrue(getPMONavigator(driver).pmoNavigatorIsSelected.isDisplayed(),
-		// "PMO Navigator is not displayed on drop down");
 		Assert.assertEquals(getPMONavigator(driver).ImportTAGTextBox.getText()
 				.trim(), "Import TAG");
 		Reporter.log("Import TAG is present on the Page");
@@ -61,7 +59,7 @@ public class TestPMONavigator extends PageObjects {
 		Assert.assertEquals(getPMONavigator(driver).Pacific.getText().trim(),
 				"Pacific");
 		Reporter.log("Pacific is present on the Page");
-	}
+	}*/
 
 	@Test(testName = "Verify that user is able to Navigate to all Blade Levels when Zone has been selected in PMO Navigator", description = "Verify that user is able to Navigate to all Blade Levels when Zone has been selected in PMO Navigator", dataProvider = "TC_01", dataProviderClass = LoginPage_DataProvider.class, priority = 1)
 	@TestInfo(testCaseID = "TC_01", testCaseDescription = "Verify that user is able to Navigate to all Blade Levels when Zone has been selected in PMO Navigator")
