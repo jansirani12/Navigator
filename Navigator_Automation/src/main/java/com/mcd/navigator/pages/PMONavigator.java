@@ -48,6 +48,9 @@ public class PMONavigator extends Common {
 	@FindBy(xpath = "//span[@class='k-widget k-dropdown k-header groupFilter']//span[@class='k-dropdown-wrap k-state-default' and @unselectable='on']")
 	public WebElement ListDropDown;
 
+	@FindBy(xpath = "//div[@id='tabs-toggle']/i")
+	public WebElement tabsToggleButton;
+
 	@FindBy(xpath = "//span[contains(text(), 'Development Group')]")
 	public WebElement DevelopmentGroupOptionSelected;
 
@@ -74,6 +77,12 @@ public class PMONavigator extends Common {
 
 	@FindBy(xpath = "//span[text()='Pacific']")
 	public WebElement Pacific;
+
+	public void clickOnTabToggle() {
+		wait.until(ExpectedConditions.elementToBeClickable(tabsToggleButton));
+		tabsToggleButton.click();
+		Reporter.log("Tabs Toggle button clicked<br/>");
+	}
 
 	public void verifyNavigatorDropDownPresence(String xpathExpression) {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By
@@ -295,6 +304,26 @@ public class PMONavigator extends Common {
 		driver.findElement(
 				By.xpath("//div[@id='blade4Grid']/div[3]/table/tbody/tr["
 						+ MCDSiteNumber + "]/td[1]/input")).click();
-		//waitForPageLoadOffshore();
+//		waitForPageLoadOffshore();
+	}
+
+	public void selectListOptionFromDropDownInBladder(String listOption) {
+		clickOnListInDropDownInBladder();
+		wait.until(ExpectedConditions.elementToBeClickable(By
+				.xpath("//li[contains(text(),'" + listOption + "')]")));
+		driver.findElement(
+				By.xpath("//li[contains(text(),'" + listOption + "')]"))
+				.click();
+		Reporter.log("Select the value " + listOption
+				+ " from the List drop down<br/>");
+	}
+
+	public void clickOnListInDropDownInBladder() {
+		wait.until(ExpectedConditions.elementToBeClickable(By
+				.xpath("(//span[@class='k-icon k-i-arrow-s'])[7]")));
+		driver.findElement(By.xpath("(//span[@class='k-icon k-i-arrow-s'])[7]"))
+				.click();
+		sleep(500);
+		Reporter.log("List Of Franchise Navigator Drop Down Is clicked<br/>");
 	}
 }

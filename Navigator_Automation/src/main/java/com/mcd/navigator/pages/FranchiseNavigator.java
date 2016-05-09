@@ -136,6 +136,7 @@ public class FranchiseNavigator extends Common {
 	}
 
 	public void closeBlade(int bladeIndex) {
+		waitForPageLoadOffshore();
 		wait.until(ExpectedConditions.elementToBeClickable(By
 				.xpath("//div[@blade-id='blade" + bladeIndex
 						+ "']//span[contains(@class,'close-button')]")));

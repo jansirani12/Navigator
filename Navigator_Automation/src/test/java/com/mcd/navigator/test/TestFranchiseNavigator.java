@@ -17,7 +17,7 @@ public class TestFranchiseNavigator extends PageObjects {
 	@Parameters({ "browser", "url" })
 	public void setUp(String browser, String url) {
 		driver = getWebDriver(browser);
-		wait = new WebDriverWait(driver, 20);
+		wait = new WebDriverWait(driver, 60);
 		navigate(url);
 	}
 

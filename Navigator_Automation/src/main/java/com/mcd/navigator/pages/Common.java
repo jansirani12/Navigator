@@ -22,7 +22,7 @@ public abstract class Common {
 
 	public Common(WebDriver driver) {
 		this.driver = driver;
-		wait = new WebDriverWait(driver, 60);
+		wait = new WebDriverWait(driver, 30);
 		action = new Actions(driver);
 	}
 
