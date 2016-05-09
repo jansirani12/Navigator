@@ -13,7 +13,6 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 
 public abstract class Common {
 	public WebDriver driver;
@@ -78,44 +77,13 @@ public abstract class Common {
 		}
 	}
 
-	public void clickNavigatorDropDown() {
-		driver.findElement(
-				By.xpath("//div[@class='indicator']//span[@class='k-icon k-i-arrow-s']"))
-				.isDisplayed();
-		wait.until(ExpectedConditions.elementToBeClickable(By
-				.xpath("//div[@class='indicator']//span[@class='k-icon k-i-arrow-s']")));
-		sleep(5000);
-		driver.findElement(
-				By.xpath("//div[@class='indicator']//span[@class='k-icon k-i-arrow-s']"))
-				.click();
-	}
-
-	public void verifyPresenceOfNavigatorDropwDownOptions(
-			String navigatorDropDownOption) {
-		// clickNavigatorDropDown();
-		driver.findElement(
-				By.xpath("//span[contains(text(), '" + navigatorDropDownOption
-						+ "')]")).isDisplayed();
-		wait.until(ExpectedConditions.elementToBeClickable(By
-				.xpath("//span[contains(text(), '" + navigatorDropDownOption
-						+ "')]")));
-		Assert.assertEquals(
-				driver.findElement(
-						By.xpath("//span[contains(text(), '"
-								+ navigatorDropDownOption + "')]")).getText()
-						.trim(), navigatorDropDownOption);
-	}
-
-	public void clickOnNavigatorDropDownOptions(String navigatorDropDownOption) {
-		clickNavigatorDropDown();
-		driver.findElement(
-				By.xpath("//span[contains(text(), '" + navigatorDropDownOption
-						+ "')]")).isDisplayed();
-		wait.until(ExpectedConditions.elementToBeClickable(By
-				.xpath("//span[contains(text(), '" + navigatorDropDownOption
-						+ "')]")));
-		driver.findElement(
-				By.xpath("//span[contains(text(), '" + navigatorDropDownOption
-						+ "')]")).click();
+	public void waitForPageLoadOffshore() {
+		try {
+			(new WebDriverWait(driver, 120)).until(ExpectedConditions
+					.elementToBeClickable(By
+							.xpath("(//input[@name='WorkAroundForPageLoad']")));
+		} catch (Exception e) {
+			// Do nothing
+		}
 	}
 }

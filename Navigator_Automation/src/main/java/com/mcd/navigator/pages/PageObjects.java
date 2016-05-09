@@ -15,7 +15,7 @@ public class PageObjects extends Common {
 	public FranchiseNavigator getFranchiseNavigator(WebDriver driver) {
 		return new FranchiseNavigator(driver);
 	}
-	
+
 	public PMONavigator getPMONavigator(WebDriver driver) {
 		return new PMONavigator(driver);
 	}

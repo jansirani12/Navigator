@@ -22,7 +22,7 @@ public class LoginPage extends Common {
 
 	@FindBy(xpath = "//input[@id='ctl00_ContentPlaceHolder1_btnSubmit']")
 	public WebElement loginButton;
-	
+
 	public void loginIntoApplication(String userName, String password) {
 		userNameTextBox.click();
 		userNameTextBox.sendKeys(userName);

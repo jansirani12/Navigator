@@ -9,6 +9,7 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.mcd.common.annotations.TestInfo;
+import com.mcd.navigator.excelutils.LoginPageData;
 import com.mcd.navigator.pages.PageObjects;
 
 public class TestPMONavigator extends PageObjects {
@@ -21,14 +22,12 @@ public class TestPMONavigator extends PageObjects {
 		navigate(url);
 	}
 
-	@Test(testName = "Verify all the Elements are present on PMO Navigator Landing Page", description = "Logininto PMO Navigator Home Page", priority = 0)
+	@Test(testName = "Verify all the Elements are present on PMO Navigator Landing Page", description = "Logininto PMO Navigator Home Page", dataProviderClass = LoginPage_DataProvider.class, priority = 0)
 	@TestInfo(testCaseID = "TC_01", testCaseDescription = "Logininto PMO Navigator Home Page")
-	public void verifyPMONavigatorOtionOnLAndingPage() {
-		getLoginPage(driver).userNameTextBox.click();
-		getLoginPage(driver).userNameTextBox.sendKeys("etst0028");
-		getLoginPage(driver).passWordTexrBox.click();
-		getLoginPage(driver).passWordTexrBox.sendKeys("Marc2016");
-		getLoginPage(driver).loginButton.click();
+	public void verifyPMONavigatorOptionOnLandingPage(LoginPageData data) {
+		// Login into the application
+		getLoginPage(driver).loginIntoApplication(data.getUserName(),
+				data.getPassWord());
 		getHomePage(driver).clickOnNavigatorDropDown("PMO Navigator");
 		getPMONavigator(driver).pmoNavigatorIsSelected.isDisplayed();
 		Assert.assertEquals(getPMONavigator(driver).pmoNavigatorIsSelected
@@ -61,40 +60,58 @@ public class TestPMONavigator extends PageObjects {
 		Reporter.log("Pacific is present on the Page");
 	}
 
-	@Test(testName = "Verify all the drop down options are present on PMO Navigator Drop Down", description = "Verify all the drop down options are present on PMO Navigator Drop Down", priority = 1)
-	@TestInfo(testCaseID = "TC_02", testCaseDescription = "Verify all the drop down options are present on PMO Navigator Drop Down")
-	public void verifyPresenceOfAllDropDownOptionsInNavigatorDropDown() {
-		getLoginPage(driver).userNameTextBox.click();
-		getLoginPage(driver).userNameTextBox.sendKeys("etst0028");
-		getLoginPage(driver).passWordTexrBox.click();
-		getLoginPage(driver).passWordTexrBox.sendKeys("Marc2016");
-		getLoginPage(driver).loginButton.click();
-		getPMONavigator(driver).clickNavigatorDropDown();
-		getPMONavigator(driver).verifyPresenceOfNavigatorDropwDownOptions(
-				"PMO Navigator");
-		getPMONavigator(driver).verifyPresenceOfNavigatorDropwDownOptions(
-				"PMO Reports");
-		getPMONavigator(driver).verifyPresenceOfNavigatorDropwDownOptions(
-				"Franchise Navigator");
-		getPMONavigator(driver).verifyPresenceOfNavigatorDropwDownOptions(
-				"Franchise Navigator Reports");
-		getPMONavigator(driver).verifyPresenceOfNavigatorDropwDownOptions(
-				"Strategic Plan");
-		getPMONavigator(driver).verifyPresenceOfNavigatorDropwDownOptions(
-				"Admin Portal");
-		getPMONavigator(driver).verifyPresenceOfNavigatorDropwDownOptions(
-				"Alteryx Analytics Gallery");
-		getPMONavigator(driver).verifyPresenceOfNavigatorDropwDownOptions(
-				"Share Point");
-		getPMONavigator(driver).verifyPresenceOfNavigatorDropwDownOptions(
-				"Global Performance Matrix Site");
-		getPMONavigator(driver).verifyPresenceOfNavigatorDropwDownOptions(
-				"Business Review Application");
+	@Test(testName = "Verify that user is able to Navigate to all Blade Levels when Zone has been selected in PMO Navigator", description = "Verify that user is able to Navigate to all Blade Levels when Zone has been selected in PMO Navigator", dataProvider = "TC_01", dataProviderClass = LoginPage_DataProvider.class, priority = 1)
+	@TestInfo(testCaseID = "TC_01", testCaseDescription = "Verify that user is able to Navigate to all Blade Levels when Zone has been selected in PMO Navigator")
+	public void verifyAllBladeLevelsForPMOZone(LoginPageData data) {
+		// Login into the application
+		getLoginPage(driver).loginIntoApplication(data.getUserName(),
+				data.getPassWord());
+		getHomePage(driver).resetAppToPMONavigator();
+		getPMONavigator(driver).clickListDropDownArrowPMO();
+		getPMONavigator(driver).selecListDropDownOptionPMO("Zone");
+		getPMONavigator(driver).clickZonePMO("3");
+		getPMONavigator(driver).clickRegionPMO("2");
+		getPMONavigator(driver).clickMiniMarketPMO("3");
+		getPMONavigator(driver).clickMCDSitesPMO("1");
+		getPMONavigator(driver).foucsAndClickMapMarker("65906");
+
+	}
+
+	@Test(testName = "Verify that user is able to Navigate to all Blade Levels when Development Group has been selected in PMO Navigator", description = "Verify that user is able to Navigate to all Blade Levels when Development Group has been selected in PMO Navigator", dataProvider = "TC_01", dataProviderClass = LoginPage_DataProvider.class, priority = 2)
+	@TestInfo(testCaseID = "TC_02", testCaseDescription = "Verify that user is able to Navigate to all Blade Levels when Development Group has been selected in PMO Navigator")
+	public void verifyAlBladesForPMODevelopmentGroup(LoginPageData data) {
+		// Login into the application
+		getLoginPage(driver).loginIntoApplication(data.getUserName(),
+				data.getPassWord());
+		getHomePage(driver).resetAppToPMONavigator();
+		getPMONavigator(driver).clickListDropDownArrowPMO();
+		getPMONavigator(driver).selecListDropDownOptionPMO("Development Group");
+		getPMONavigator(driver).clickDevelopmentGroupPMO("2");
+		getPMONavigator(driver).clickEntityPMO("2");
+		getPMONavigator(driver).clickOperatorPMO("1");
+		getPMONavigator(driver).clickMcdSitesDevGrpPMO("1");
+		getPMONavigator(driver).foucsAndClickMapMarker("63909");
+	}
+
+	@Test(testName = "Verify that user is able to Navigate to all Blade Levels when Division has been selected in PMO Navigator", description = "Verify that user is able to Navigate to all Blade Levels when Division has been selected in PMO Navigator", dataProvider = "TC_01", dataProviderClass = LoginPage_DataProvider.class, priority = 3)
+	@TestInfo(testCaseID = "TC_03", testCaseDescription = "Verify that user is able to Navigate to all Blade Levels when Division has been selected in PMO Navigator")
+	public void verifyAlBladesForPMODivision(LoginPageData data) {
+		// Login into the application
+		getLoginPage(driver).loginIntoApplication(data.getUserName(),
+				data.getPassWord());
+		getHomePage(driver).resetAppToPMONavigator();
+		getPMONavigator(driver).clickListDropDownArrowPMO();
+		getPMONavigator(driver).selecListDropDownOptionPMO("Division");
+		getPMONavigator(driver).clickDivisionPMO("1");
+		getPMONavigator(driver).clickRegionOfDivisionPMO("1");
+		getPMONavigator(driver).clickMiniMarketDivisionPMO("1");
+		getPMONavigator(driver).clickMCDSitesDivisionPMO("1");
+		getPMONavigator(driver).foucsAndClickMapMarker("55795");
 	}
 
 	@AfterMethod(alwaysRun = true)
 	public void tearDown() {
-		getHomePage(driver).clickOnNavigatorDropDown("PMO Navigator");
+		// getHomePage(driver).clickOnNavigatorDropDown("PMO Navigator");
 		driver.quit();
 	}
 

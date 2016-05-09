@@ -7,23 +7,20 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.Reporter;
 
 public class FranchiseNavigator extends Common {
 
+	@FindBy(xpath = "//button[text()='Filter']")
+	public WebElement filterButton;
+
+	@FindBy(xpath = "//button[contains(text(),'Clear')]")
+	public WebElement clearButton;
+
 	public FranchiseNavigator(WebDriver driver) {
 		super(driver);
 		PageFactory.initElements(driver, this);
-	}
-
-	public void franchiseNavigatorListDropDown() {
-		wait.until(ExpectedConditions.elementToBeClickable(By
-				.xpath("(//span[@class='k-icon k-i-arrow-s'])[3]")));
-		driver.findElement(By.xpath("(//span[@class='k-icon k-i-arrow-s'])[3]"))
-				.click();
-		Reporter.log("Franchise Navigator Lis Drop Down is clicked<br/>");
 	}
 
 	public void clickOnListInDropDownInBladder() {
@@ -31,6 +28,7 @@ public class FranchiseNavigator extends Common {
 				.xpath("(//span[@class='k-icon k-i-arrow-s'])[3]")));
 		driver.findElement(By.xpath("(//span[@class='k-icon k-i-arrow-s'])[3]"))
 				.click();
+		sleep(500);
 		Reporter.log("List Of Franchise Navigator Drop Down Is clicked<br/>");
 	}
 
@@ -52,24 +50,6 @@ public class FranchiseNavigator extends Common {
 				.click();
 		Reporter.log("Select the value " + listOption
 				+ " from the List drop down<br/>");
-	}
-
-	@FindBy(xpath = "//li[contains(text(),'Zone')]")
-	public WebElement zone;
-
-	public void selectZoneFromDropDown() {
-		wait.until(ExpectedConditions.elementToBeClickable(zone));
-		zone.click();
-		Reporter.log("Zone is displayed in drop down<br/>");
-	}
-
-	@FindBy(xpath = "(//li[contains(text(),'Entity')])[1]")
-	public WebElement entity;
-
-	public void selectEntityFromDropDown() {
-		wait.until(ExpectedConditions.elementToBeClickable(entity));
-		entity.click();
-		Reporter.log("Entity is selected from drop down<br/>");
 	}
 
 	public void clickOnSpecificResultInGrid(String regionName) {
@@ -94,9 +74,6 @@ public class FranchiseNavigator extends Common {
 						+ regionName + "')]")).isDisplayed();
 	}
 
-	@FindBy(xpath = "//h1[contains(text(),'ATLANTA Region')]")
-	public WebElement atlantaRegion;
-
 	public void clickOnRegionNameFilterButton() {
 		wait.until(ExpectedConditions.elementToBeClickable(By
 				.xpath("(//span[@class='k-icon k-filter'])[1]")));
@@ -104,76 +81,6 @@ public class FranchiseNavigator extends Common {
 				.click();
 		Reporter.log("Region Name Filter Button is clicked<br/>");
 	}
-
-	public void regionFilterButton() {
-		wait.until(ExpectedConditions.elementToBeClickable(By
-				.xpath("(//span[@class='k-icon k-filter'])[1]")));
-		sleep(1000);
-		driver.findElement(By.xpath("(//span[@class='k-icon k-filter'])[1]"))
-				.click();
-		Reporter.log("Region Filtered Button is clicked<br/>");
-	}
-
-	@FindBy(xpath = "(//input[@class='k-textbox'])[1]")
-	public WebElement filterByName;
-
-	@FindBy(xpath = "//button[text()='Filter']")
-	public WebElement filterButton;
-
-	@FindBy(xpath = "//button[contains(text(),'Clear')]")
-	public WebElement clearButton;
-
-	// WebElement of East Zone displayed in blader
-	@FindBy(xpath = "//span[contains(text(),'East')]")
-	public WebElement eastZone;
-
-	// WebElement of Experience of the Future
-	@FindBy(xpath = "//span[contains(text(),'Experience of the Future')]")
-	public WebElement experienceOfTheFutureZone;
-
-	// WebElement of West is displayed
-	@FindBy(xpath = "//span[contains(text(),'West')]")
-	public WebElement westZone;
-
-	// WebElement of AARONJAMESDJR Entity
-	@FindBy(xpath = "//span[contains(text(),'AARON, JAMES D JR')]")
-	public WebElement entityAARONJAMESDJR;
-
-	// WebElemet of ABBATE, JAMES A Entity
-	@FindBy(xpath = "//span[contains(text(),'ABBATE, JAMES A')]")
-	public WebElement entityABBATEJAMESA;
-
-	// WebElement of ABBATE,JOHN
-	@FindBy(xpath = "//span[contains(text(),'ABBATE, JOHN')]")
-	public WebElement entityABBATEJHON;
-
-	// WebElement of ABBOTONI HEIDI D DARYL A
-	@FindBy(xpath = "//span[contains(text(),'ABBOTONI, HEIDI D, & DARYL A')]")
-	public WebElement entityABBOTONI_HEIDI_D_DARYL_A;
-
-	// WebElement of ABBOUD ALIA C
-	@FindBy(xpath = "//span[contains(text(),'ABBOUD, ALIA C')]")
-	public WebElement entityABBOUD_ALIA_C;
-
-	// WebElement of ABEDI,JIM J
-	@FindBy(xpath = "//span[contains(text(),'ABEDI, JIM J')]")
-	public WebElement entityABEDIJIMJ;
-
-	// WebElement of ABRISHAMI, BEHNAM
-	@FindBy(xpath = "//span[contains(text(),'ABRISHAMI, BEHNAM')]")
-	public WebElement entityABRISHAMIBEHNAM;
-
-	// WebElement of ACEVEDO, JUAN I
-	@FindBy(xpath = "//span[contains(text(),'ACEVEDO, JUAN I')]")
-	public WebElement entityACEVEDOJUNAI;
-
-	// WebElement of ACOSTA, RICHARD, CELIA, CARLOS & CELIA JAIRALA
-	@FindBy(xpath = "//span[contains(text(),'ACOSTA, RICHARD, CELIA, CARLOS & CELIA JAIRALA')]")
-	public WebElement entityACOSTARICHARDCELIA;
-
-	// WebElement of ACRE EDWARD
-	@FindBy(xpath = "//span[contains(text(),'ACRE, EDWARD')]")
-	public WebElement entity_Acre_Edwars;
 
 	public void selectValueFromDropDownInFilter(int dropdownIndex,
 			String dropdownValue) {
@@ -207,6 +114,7 @@ public class FranchiseNavigator extends Common {
 	}
 
 	public void verifyFilterValueDisplaysAfterApplyingFilter(String filterValue) {
+		sleep(500);
 		wait.until(ExpectedConditions.elementToBeClickable(By
 				.xpath("//table[@class='k-selectable']//tr//td/span")));
 		WebElement regionNameDisplayedOnUI = driver.findElement(By
@@ -228,23 +136,17 @@ public class FranchiseNavigator extends Common {
 	}
 
 	public void closeBlade(int bladeIndex) {
-		wait.until(ExpectedConditions.presenceOfElementLocated(By
+		wait.until(ExpectedConditions.elementToBeClickable(By
 				.xpath("//div[@blade-id='blade" + bladeIndex
 						+ "']//span[contains(@class,'close-button')]")));
-		Reporter.log("Close the blade '" + bladeIndex + "'<br/>");
 		driver.findElement(
 				By.xpath("//div[@blade-id='blade" + bladeIndex
 						+ "']//span[contains(@class,'close-button')]")).click();
+		Reporter.log("Close the blade '" + bladeIndex + "'<br/>");
 	}
 
 	public void clickOnDataDropDown() {
-		try {
-			(new WebDriverWait(driver, 120)).until(ExpectedConditions
-					.elementToBeClickable(By
-							.xpath("//input[@name='WorkAroundForPageLoad']")));
-		} catch (Exception e) {
-			// Do nothing
-		}
+		waitForPageLoadOffshore();
 		wait.until(ExpectedConditions.elementToBeClickable(By
 				.xpath("(//span[@class='k-icon k-i-arrow-s'])[4]")));
 		driver.findElement(By.xpath("(//span[@class='k-icon k-i-arrow-s'])[4]"))

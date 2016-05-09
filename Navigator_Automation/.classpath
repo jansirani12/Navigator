@@ -7,10 +7,10 @@
 	<classpathentry kind="lib" path="LibraryFiles/junit-dep-4.11.jar"/>
 	<classpathentry kind="lib" path="LibraryFiles/jxl-2.6.12.jar"/>
 	<classpathentry kind="lib" path="LibraryFiles/reportng-1.1.4.jar"/>
-	<classpathentry kind="lib" path="LibraryFiles/selenium-java-2.47.1.jar"/>
-	<classpathentry kind="lib" path="LibraryFiles/selenium-server-standalone-2.47.1.jar"/>
 	<classpathentry kind="lib" path="LibraryFiles/testng-6.8.5.jar"/>
 	<classpathentry kind="lib" path="LibraryFiles/velocity-dep-1.4.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="LibraryFiles/selenium-java-2.53.0.jar"/>
+	<classpathentry kind="lib" path="LibraryFiles/selenium-server-standalone-2.53.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

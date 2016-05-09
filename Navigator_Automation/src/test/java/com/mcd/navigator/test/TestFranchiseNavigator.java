@@ -43,13 +43,11 @@ public class TestFranchiseNavigator extends PageObjects {
 		Assert.assertTrue(
 				getFranchiseNavigator(driver).isListOptionDisplayed("Entity"),
 				"Entity is not displayed on Franchise Drop Down");
-		// Click again to close the element
+		// Click again to close the drop down
 		getFranchiseNavigator(driver).clickOnListInDropDownInBladder();
 		// select Region from drop down
 		getFranchiseNavigator(driver).selectListOptionFromDropDownInBladder(
 				"Region");
-		// Click on Region Name filter button
-		getFranchiseNavigator(driver).clickOnRegionNameFilterButton();
 		// Click on Region Name filter button
 		getFranchiseNavigator(driver).clickOnRegionNameFilterButton();
 		// Select the filter by value from drop down
@@ -77,7 +75,7 @@ public class TestFranchiseNavigator extends PageObjects {
 				.verifyFilterValueDisplaysAfterApplyingFilter(
 						"BALTIMORE-WASHINGTON");
 		// Click on Region Name filter button
-		getFranchiseNavigator(driver).regionFilterButton();
+		getFranchiseNavigator(driver).clickOnRegionNameFilterButton();
 		// Select the filter by value from drop down
 		getFranchiseNavigator(driver).selectValueFromDropDownInFilter(1,
 				"Is equal to");
@@ -161,21 +159,21 @@ public class TestFranchiseNavigator extends PageObjects {
 				.isOptionDisplayedInBladder("ABBATE, JOHN"),
 				"ABBATE, JOHN is not displayed");
 		// Verify that ABBOTONI, HEIDI D, & DARYL A is displayed on Blade one
-		Assert.assertTrue(
-				getFranchiseNavigator(driver).entityABBOTONI_HEIDI_D_DARYL_A
-						.isDisplayed(),
+		Assert.assertTrue(getFranchiseNavigator(driver)
+				.isOptionDisplayedInBladder("ABBOTONI, HEIDI D, & DARYL A"),
 				"ABBOTONI HEIDI D DARY A is not displayed");
 		// Verify that ABBOUD ALIA C Entity is displayed in blade one
-		Assert.assertTrue(
-				getFranchiseNavigator(driver).entityABBOUD_ALIA_C.isDisplayed(),
+		Assert.assertTrue(getFranchiseNavigator(driver)
+				.isOptionDisplayedInBladder("ABBOUD, ALIA C"),
 				"ABBOUD, ALIA C is not displayed");
-		Assert.assertTrue(
-				getFranchiseNavigator(driver).entityABEDIJIMJ.isDisplayed(),
+		Assert.assertTrue(getFranchiseNavigator(driver)
+				.isOptionDisplayedInBladder("ABEDI, JIM J"),
 				"ABEDI, JIM J is not displayed");
-		Assert.assertTrue(getFranchiseNavigator(driver).entityABRISHAMIBEHNAM
-				.isDisplayed(), "ABRISHAMI, BEHNAM is not displayed");
-		Assert.assertTrue(
-				getFranchiseNavigator(driver).entityACEVEDOJUNAI.isDisplayed(),
+		Assert.assertTrue(getFranchiseNavigator(driver)
+				.isOptionDisplayedInBladder("ABRISHAMI, BEHNAM"),
+				"ABRISHAMI, BEHNAM is not displayed");
+		Assert.assertTrue(getFranchiseNavigator(driver)
+				.isOptionDisplayedInBladder("ACEVEDO, JUAN I"),
 				"ACEVEDO, JUAN I is not displayed");
 		Assert.assertTrue(getFranchiseNavigator(driver)
 				.isOptionDisplayedInBladder("ABBOTONI, HEIDI D, & DARYL A"),

@@ -1,6 +1,7 @@
 package com.mcd.navigator.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -78,5 +79,206 @@ public class PMONavigator extends Common {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By
 				.xpath(NavigatorDropDownXpath)));
 		Reporter.log("Navigator Drop Down is present on the PMO Navigator Landing page");
+	}
+
+	public void clickListDropDownArrowPMO() {
+		driver.findElement(By.xpath("(//span[@class='k-icon k-i-arrow-s'])[7]"))
+				.isDisplayed();
+		wait.until(ExpectedConditions.elementToBeClickable(driver
+				.findElement(By
+						.xpath("(//span[@class='k-icon k-i-arrow-s'])[7]"))));
+		driver.findElement(By.xpath("(//span[@class='k-icon k-i-arrow-s'])[7]"))
+				.click();
+	}
+
+	public void selecListDropDownOptionPMO(String listDropDownOption) {
+		driver.findElement(
+				By.xpath("//li[(text()='" + listDropDownOption + "')]"))
+				.isDisplayed();
+		wait.until(ExpectedConditions.elementToBeClickable(By
+				.xpath("//li[(text()='" + listDropDownOption + "')]")));
+		driver.findElement(
+				By.xpath("//li[(text()='" + listDropDownOption + "')]"))
+				.click();
+		waitForPageLoadOffshore();
+	}
+
+	public void clickZonePMO(String zoneNumber) {
+		driver.findElement(
+				By.xpath("//tbody[@role='rowgroup']/tr[" + zoneNumber
+						+ "]/td[1]")).isDisplayed();
+		wait.until(ExpectedConditions.elementToBeClickable(driver
+				.findElement(By.xpath("//tbody[@role='rowgroup']/tr["
+						+ zoneNumber + "]/td[1]"))));
+		driver.findElement(
+				By.xpath("//tbody[@role='rowgroup']/tr[" + zoneNumber
+						+ "]/td[1]")).click();
+		waitForPageLoadOffshore();
+	}
+
+	public void clickRegionPMO(String RegionNumber) {
+		driver.findElement(
+				By.xpath("//tbody[@role='rowgroup']/tr[" + RegionNumber
+						+ "]/td[1]/input")).isDisplayed();
+		wait.until(ExpectedConditions.elementToBeClickable(driver
+				.findElement(By.xpath("//tbody[@role='rowgroup']/tr["
+						+ RegionNumber + "]/td[1]/input"))));
+		driver.findElement(
+				By.xpath("//tbody[@role='rowgroup']/tr[" + RegionNumber
+						+ "]/td[1]/input")).click();
+		waitForPageLoadOffshore();
+	}
+
+	public void clickMiniMarketPMO(String MiniMarketNumber) {
+		driver.findElement(
+				By.xpath("//tbody[@role='rowgroup']/tr[" + MiniMarketNumber
+						+ "]/td[1]")).isDisplayed();
+		wait.until(ExpectedConditions.elementToBeClickable(By
+				.xpath("//tbody[@role='rowgroup']/tr[" + MiniMarketNumber
+						+ "]/td[1]")));
+		driver.findElement(
+				By.xpath("//tbody[@role='rowgroup']/tr[" + MiniMarketNumber
+						+ "]/td[1]")).click();
+		waitForPageLoadOffshore();
+	}
+
+	public void clickMCDSitesPMO(String MCDSiteNumber) {
+		driver.findElement(
+				By.xpath("(//tbody[@role='rowgroup']/tr[" + MCDSiteNumber
+						+ "]/td[1]/input)[1]")).isDisplayed();
+		wait.until(ExpectedConditions.elementToBeClickable(By
+				.xpath("(//tbody[@role='rowgroup']/tr[" + MCDSiteNumber
+						+ "]/td[1]/input)[1]")));
+		driver.findElement(
+				By.xpath("(//tbody[@role='rowgroup']/tr[" + MCDSiteNumber
+						+ "]/td[1]/input)[1]")).click();
+		waitForPageLoadOffshore();
+	}
+
+	// div[@id='blade1Grid']/div[3]/table/tbody/tr[1]/td[1]/input
+
+	public void clickDevelopmentGroupPMO(String DevGroupNumber) {
+		driver.findElement(
+				By.xpath("//div[@id='blade1Grid']/div[3]/table/tbody/tr["
+						+ DevGroupNumber + "]/td[1]/input")).isDisplayed();
+		wait.until(ExpectedConditions.elementToBeClickable(By
+				.xpath("//div[@id='blade1Grid']/div[3]/table/tbody/tr["
+						+ DevGroupNumber + "]/td[1]/input")));
+		driver.findElement(
+				By.xpath("//div[@id='blade1Grid']/div[3]/table/tbody/tr["
+						+ DevGroupNumber + "]/td[1]/input")).click();
+		waitForPageLoadOffshore();
+	}
+
+	public void clickEntityPMO(String EntityNumber) {
+		driver.findElement(
+				By.xpath("//div[@id='blade2Grid']/div[3]/table/tbody/tr["
+						+ EntityNumber + "]/td[1]/input")).isDisplayed();
+		wait.until(ExpectedConditions.elementToBeClickable(By
+				.xpath("//div[@id='blade2Grid']/div[3]/table/tbody/tr["
+						+ EntityNumber + "]/td[1]/input")));
+		driver.findElement(
+				By.xpath("//div[@id='blade2Grid']/div[3]/table/tbody/tr["
+						+ EntityNumber + "]/td[1]/input")).click();
+		waitForPageLoadOffshore();
+	}
+
+	public void clickOperatorPMO(String OperatorNumber) {
+		driver.findElement(
+				By.xpath("//div[@id='blade3Grid']/div[3]/table/tbody/tr["
+						+ OperatorNumber + "]/td[1]/input")).isDisplayed();
+		wait.until(ExpectedConditions.elementToBeClickable(By
+				.xpath("//div[@id='blade3Grid']/div[3]/table/tbody/tr["
+						+ OperatorNumber + "]/td[1]/input")));
+		driver.findElement(
+				By.xpath("//div[@id='blade3Grid']/div[3]/table/tbody/tr["
+						+ OperatorNumber + "]/td[1]/input")).click();
+		waitForPageLoadOffshore();
+	}
+
+	public void clickMcdSitesDevGrpPMO(String SiteNumber) {
+		driver.findElement(
+				By.xpath("//div[@id='blade4Grid']/div[3]/table/tbody/tr["
+						+ SiteNumber + "]/td[1]/input")).isDisplayed();
+		wait.until(ExpectedConditions.elementToBeClickable(By
+				.xpath("//div[@id='blade4Grid']/div[3]/table/tbody/tr["
+						+ SiteNumber + "]/td[1]/input")));
+		driver.findElement(
+				By.xpath("//div[@id='blade4Grid']/div[3]/table/tbody/tr["
+						+ SiteNumber + "]/td[1]/input")).click();
+		waitForPageLoadOffshore();
+	}
+
+	public void foucsAndClickMapMarker(String MarkerID) {
+		WebElement element = driver
+				.findElement(By
+						.xpath("//div[@id='map-canvas']/div/div[1]/div[3]/div[1]/div[@id='"
+								+ MarkerID + "']"));
+		((JavascriptExecutor) driver).executeScript(
+				"arguments[0].scrollIntoView(true);", element);
+		driver.findElement(
+				By.xpath("//div[@id='map-canvas']/div/div[1]/div[3]/div[1]/div[@id='"
+						+ MarkerID + "']")).isDisplayed();
+		wait.until(ExpectedConditions.elementToBeClickable(By
+				.xpath("//div[@id='map-canvas']"
+						+ "/div/div[1]/div[3]/div[1]/div[@id='" + MarkerID
+						+ "']")));
+		driver.findElement(
+				By.xpath("//div[@id='map-canvas']/div/div[1]/div[3]/div[1]/div[@id='"
+						+ MarkerID + "']")).click();
+		waitForPageLoadOffshore();
+	}
+
+	public void clickDivisionPMO(String DivisionNumber) {
+		driver.findElement(
+				By.xpath("//div[@id='blade1Grid']/div[3]/table/tbody/tr["
+						+ DivisionNumber + "]/td[1]/input")).isDisplayed();
+		wait.until(ExpectedConditions.elementToBeClickable(By
+				.xpath("//div[@id='blade1Grid']/div[3]/table/tbody/tr["
+						+ DivisionNumber + "]/td[1]/input")));
+		driver.findElement(
+				By.xpath("//div[@id='blade1Grid']/div[3]/table/tbody/tr["
+						+ DivisionNumber + "]/td[1]/input")).click();
+		waitForPageLoadOffshore();
+	}
+
+	public void clickRegionOfDivisionPMO(String RegionNUmber) {
+		driver.findElement(
+				By.xpath("//div[@id='blade2Grid']/div[3]/table/tbody/tr["
+						+ RegionNUmber + "]/td[1]/input")).isDisplayed();
+		wait.until(ExpectedConditions.elementToBeClickable(By
+				.xpath("//div[@id='blade2Grid']/div[3]/table/tbody/tr["
+						+ RegionNUmber + "]/td[1]/input")));
+		driver.findElement(
+				By.xpath("//div[@id='blade2Grid']/div[3]/table/tbody/tr["
+						+ RegionNUmber + "]/td[1]/input")).click();
+		waitForPageLoadOffshore();
+	}
+
+	public void clickMiniMarketDivisionPMO(String MiniMarketNumber) {
+		driver.findElement(
+				By.xpath("//div[@id='blade3Grid']/div[3]/table/tbody/tr["
+						+ MiniMarketNumber + "]/td[1]/input")).isDisplayed();
+		wait.until(ExpectedConditions.elementToBeClickable(By
+				.xpath("//div[@id='blade3Grid']/div[3]/table/tbody/tr["
+						+ MiniMarketNumber + "]/td[1]/input")));
+		driver.findElement(
+				By.xpath("//div[@id='blade3Grid']/div[3]/table/tbody/tr["
+						+ MiniMarketNumber + "]/td[1]/input")).click();
+		waitForPageLoadOffshore();
+
+	}
+
+	public void clickMCDSitesDivisionPMO(String MCDSiteNumber) {
+		driver.findElement(
+				By.xpath("//div[@id='blade4Grid']/div[3]/table/tbody/tr["
+						+ MCDSiteNumber + "]/td[1]/input")).isDisplayed();
+		wait.until(ExpectedConditions.elementToBeClickable(By
+				.xpath("//div[@id='blade4Grid']/div[3]/table/tbody/tr["
+						+ MCDSiteNumber + "]/td[1]/input")));
+		driver.findElement(
+				By.xpath("//div[@id='blade4Grid']/div[3]/table/tbody/tr["
+						+ MCDSiteNumber + "]/td[1]/input")).click();
+		waitForPageLoadOffshore();
 	}
 }
