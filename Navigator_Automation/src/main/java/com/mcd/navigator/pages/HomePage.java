@@ -42,7 +42,7 @@ public class HomePage extends Common {
 		driver.findElement(
 				By.xpath("//div/span/img[@alt='" + navigatorOption + "']"))
 				.click();
-		waitForPageLoadOffshore();
+//		waitForPageLoadOffshore();
 	}
 
 	public void resetAppToPMONavigator() {

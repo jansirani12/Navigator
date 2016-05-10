@@ -213,8 +213,6 @@ public class TestFranchiseNavigator extends PageObjects {
 		getFranchiseNavigator(driver).clickOnFilterButton();
 		getFranchiseNavigator(driver)
 				.verifyFilterValueDisplaysAfterApplyingFilter("NEW YORK METRO");
-		getFranchiseNavigator(driver)
-				.verifyFilterValueDisplaysAfterApplyingFilter("MIDWEST");
 		// Click on Region Name Filter Button
 		getFranchiseNavigator(driver).clickOnRegionNameFilterButton();
 		// Select the filter by value from drop down
@@ -266,7 +264,7 @@ public class TestFranchiseNavigator extends PageObjects {
 	}
 
 	@Test(testName = "Select Zone from Franchise navigator list and verify the zone's got displayed in first blader", description = "Select Zone from Franchise navigator list and verify the zone's got displayed in first blader", dataProvider = "TC_01", dataProviderClass = LoginPage_DataProvider.class, priority = 1)
-	@TestInfo(testCaseID = "TC 03", testCaseDescription = "Select Zone from Franchise navigator list and verify the zone's got displayed in first blader")
+	@TestInfo(testCaseID = "TC 02", testCaseDescription = "Select Zone from Franchise navigator list and verify the zone's got displayed in first blader")
 	public void selectZoneAndVerifyZonesAreDisplayedInBlader(LoginPageData data) {
 		// Login into the application
 		getLoginPage(driver).loginIntoApplication(data.getUserName(),
@@ -300,7 +298,7 @@ public class TestFranchiseNavigator extends PageObjects {
 	}
 
 	@Test(testName = "Select Zone from Franchise navigator list and verify the zone's got displayed in first blader", description = "Select Zone from Franchise navigator list and verify the zone's got displayed in first blader", dataProvider = "TC_01", dataProviderClass = LoginPage_DataProvider.class, priority = 2)
-	@TestInfo(testCaseID = "TC 04", testCaseDescription = "Select Zone from Franchise navigator list and verify the zone's got displayed in first blader")
+	@TestInfo(testCaseID = "TC 03", testCaseDescription = "Select Zone from Franchise navigator list and verify the zone's got displayed in first blader")
 	public void selectEntityAndVerifyEntityAreDisplayedInBlader(
 			LoginPageData data) {
 		// Login into the application
@@ -349,7 +347,7 @@ public class TestFranchiseNavigator extends PageObjects {
 	}
 
 	@Test(testName = "Verify whether Data Entity Measures is displayed in drop down", description = "Verify whether Data Entity Measures is displayed in drop doen", dataProvider = "TC_01", dataProviderClass = LoginPage_DataProvider.class, priority = 3)
-	@TestInfo(testCaseID = "TC 05", testCaseDescription = "Verify whether Data Entity Measures is displayed in drop down")
+	@TestInfo(testCaseID = "TC 04", testCaseDescription = "Verify whether Data Entity Measures is displayed in drop down")
 	public void verifyDataEntityMeasures(LoginPageData data) {
 		// Login into the application
 		getLoginPage(driver).loginIntoApplication(data.getUserName(),
@@ -375,39 +373,9 @@ public class TestFranchiseNavigator extends PageObjects {
 		getFranchiseNavigator(driver).verifyOptionFromDataDropDown(
 				"Business Review");
 	}
-
-	@Test(testName = "Verify that Third Level Blader is opened", description = "Verify that user is abe to opened third level blader", dataProvider = "TC_01", dataProviderClass = LoginPage_DataProvider.class, priority = 4)
-	@TestInfo(testCaseID = "TC 02", testCaseDescription = "Verify that user is abe to opened third level blader")
-	public void verifyThirdLevelBladerIsOpened(LoginPageData data) {
-		// Login into the application
-		getLoginPage(driver).loginIntoApplication(data.getUserName(),
-				data.getPassWord());
-		// Navigate to Franchise Navigator
-		getHomePage(driver).clickOnNavigatorDropDown("Franchise Navigator");
-		// select Region from drop down
-		getFranchiseNavigator(driver).selectListOptionFromDropDownInBladder(
-				"Region");
-		// Select the Region as Atlanta
-		getFranchiseNavigator(driver).clickOnSpecificResultInGrid("ATLANTA");
-		// Verify whether the region name is displayed in the second level
-		// bladder
-		Assert.assertTrue(getFranchiseNavigator(driver)
-				.verifyRegionOpenedInNewBlade("ATLANTA"),
-				"ATLANTA Region Blade is not opened in second level blader");
-		getFranchiseNavigator(driver).clickOnSpecificRegionInGrid(
-				"AARON, JAMES D JR");
-		// Verify whether the entity name is displayed in the third level
-		// bladder
-		Assert.assertTrue(
-				getFranchiseNavigator(driver)
-						.verifyRegionOpenedInNewBlade(
-								"AARON, JAMES D JR Entity"),
-				"AARON, JAMES D JR Entity is not opened in third level blader");
-		// Close the second blade opened
-		getFranchiseNavigator(driver).closeBlade(3);
-	}
+	
 	@Test(testName = "Verify that Atlanta Region is selected", description = "Verify that user is abe to Atlanda Region in second lavel blader", dataProvider = "TC_01", dataProviderClass = LoginPage_DataProvider.class, priority = 4)
-	@TestInfo(testCaseID = "TC 02", testCaseDescription = "Verify that user is able to view Atlanta in second lavel blader")
+	@TestInfo(testCaseID = "TC 05", testCaseDescription = "Verify that user is able to view Atlanta in second lavel blader")
 	public void verifyAtlantaRegioHeaderInBlader(LoginPageData data) {
 		// Login into the application
 		getLoginPage(driver).loginIntoApplication(data.getUserName(),
@@ -424,12 +392,11 @@ public class TestFranchiseNavigator extends PageObjects {
 		Assert.assertTrue(getFranchiseNavigator(driver)
 				.verifyRegionOpenedInNewBlade("ATLANTA"),
 				"ATLANTA Region Blade is not opened in second level blader");
-		getFranchiseNavigator(driver).clickOnSpecificRegionInGrid(
+		getFranchiseNavigator(driver).clickOnSpecificResultInGrid(
 				"AARON, JAMES D JR");
-		// Close the second blade opened
-		getFranchiseNavigator(driver).closeBlade(2);
+		// Navigate to PMO Navigator to close the bladders
+		getHomePage(driver).clickOnNavigatorDropDown("PMO Navigator");
 	}
-
 
 	@Test(testName = "CliCk on East Zone in Blader one and verify East Zone is displayed in Header in Blader2", description = "Clcik on East Zone in Blader one and verify East Zone is displayed in Header in Blader2", dataProvider = "TC_01", dataProviderClass = LoginPage_DataProvider.class, priority = 5)
 	@TestInfo(testCaseID = "TC 06", testCaseDescription = "Select Zone from Franchise navigator list and verify the zone's got displayed in first blader")
@@ -449,8 +416,124 @@ public class TestFranchiseNavigator extends PageObjects {
 		Assert.assertTrue(getFranchiseNavigator(driver)
 				.verifyRegionOpenedInNewBlade("East Zone"),
 				"East Zone was not displayed in the ");
-		// Close the second blade opened
-		getFranchiseNavigator(driver).closeBlade(2);
+		// Navigate to PMO Navigator to close the bladders
+		getHomePage(driver).clickOnNavigatorDropDown("PMO Navigator");
+	}
+	
+	@Test(testName = "Verify that Third Level Blader is opened for region", description = "Verify that user is abe to opened third level blader for the region", dataProvider = "TC_01", dataProviderClass = LoginPage_DataProvider.class, priority = 6)
+	@TestInfo(testCaseID = "TC 07", testCaseDescription = "Verify that user is abe to opened third level blader for the region")
+	public void verifyThirdLevelBladerIsOpenedForRegion(LoginPageData data) {
+		// Login into the application
+		getLoginPage(driver).loginIntoApplication(data.getUserName(),
+				data.getPassWord());
+		// Navigate to Franchise Navigator
+		getHomePage(driver).clickOnNavigatorDropDown("Franchise Navigator");
+		// select Region from drop down
+		getFranchiseNavigator(driver).selectListOptionFromDropDownInBladder(
+				"Region");
+		// Click on specific result in the option
+		getFranchiseNavigator(driver).clickOnSpecificResultInGrid("ATLANTA");
+		// Verify whether the region name is displayed in the second level
+		// bladder
+		Assert.assertTrue(getFranchiseNavigator(driver)
+				.verifyRegionOpenedInNewBlade("ATLANTA"),
+				"ATLANTA Region Blade is not opened in second level blader");
+		// Click on specific result in the option
+		getFranchiseNavigator(driver).clickOnSpecificResultInGrid(
+				"AARON, JAMES D JR");
+		// Verify whether the entity name is displayed in the third level
+		// bladder
+		Assert.assertTrue(
+				getFranchiseNavigator(driver)
+						.verifyRegionOpenedInNewBlade(
+								"AARON, JAMES D JR Entity"),
+				"AARON, JAMES D JR Entity is not opened in third level blader");
+		// Navigate to PMO Navigator to close the bladders
+		getHomePage(driver).clickOnNavigatorDropDown("PMO Navigator");
+	}
+	
+	@Test(testName = "Verify that Fifth Level Blader is opened for zone", description = "Verify that user is abe to opened fifth level blader for the zone", dataProvider = "TC_01", dataProviderClass = LoginPage_DataProvider.class, priority = 7)
+	@TestInfo(testCaseID = "TC 08", testCaseDescription = "Verify that user is abe to opened fifth level blader for the zone")
+	public void verifyFifthLevelBladerIsOpenedForZone(LoginPageData data) {
+		// Login into the application
+		getLoginPage(driver).loginIntoApplication(data.getUserName(),
+				data.getPassWord());
+		// Navigate to Franchise Navigator
+		getHomePage(driver).clickOnNavigatorDropDown("Franchise Navigator");
+		// select Region from drop down
+		getFranchiseNavigator(driver).selectListOptionFromDropDownInBladder(
+				"Zone");
+		// Click on specific result in the option
+		getFranchiseNavigator(driver).clickOnSpecificResultInGrid("East");
+		// Verify whether the zone name is displayed in the second level
+		// bladder
+		Assert.assertTrue(getFranchiseNavigator(driver)
+				.verifyRegionOpenedInNewBlade("East"),
+				"East Zone Blade is not opened in second level blader");
+		// Click on specific result in the option
+		getFranchiseNavigator(driver).clickOnSpecificResultInGrid(
+				"ATLANTA");
+		// Verify whether the region name is displayed in the third level
+		// bladder
+		Assert.assertTrue(
+				getFranchiseNavigator(driver)
+						.verifyRegionOpenedInNewBlade(
+								"ATLANTA"),
+				"ATLANTA Region is not opened in third level blader");
+		// Click on specific result in the option
+		getFranchiseNavigator(driver).clickOnSpecificResultInGrid(
+				"AARON, JAMES D JR");
+		// Verify whether the entity name is displayed in the fourth level
+		// bladder
+		Assert.assertTrue(
+				getFranchiseNavigator(driver)
+						.verifyRegionOpenedInNewBlade(
+								"AARON, JAMES D JR Entity"),
+				"AARON, JAMES D JR Entity is not opened in fourth level blader");
+		// Click on specific result in the option
+		getFranchiseNavigator(driver).clickOnSpecificResultInGrid(
+				"CHARLESTON, TN. - LOVES");
+		// Verify whether the restaurant name is displayed in the fifth level
+		// bladder
+		Assert.assertTrue(
+				getFranchiseNavigator(driver)
+						.verifyRegionOpenedInNewBlade(
+								"CHARLESTON, TN. - LOVES"),
+				"CHARLESTON, TN. - LOVES restraunt is not opened in fifth level blader");
+		// Navigate to PMO Navigator to close the bladders
+		getHomePage(driver).clickOnNavigatorDropDown("PMO Navigator");
+	}
+	
+	@Test(testName = "Verify that Third Level Blader is opened for entity", description = "Verify that user is abe to opened third level blader for the entity", dataProvider = "TC_01", dataProviderClass = LoginPage_DataProvider.class, priority = 8)
+	@TestInfo(testCaseID = "TC 09", testCaseDescription = "Verify that user is abe to opened third level blader for the entity")
+	public void verifyThirdLevelBladerIsOpenedForEntity(LoginPageData data) {
+		// Login into the application
+		getLoginPage(driver).loginIntoApplication(data.getUserName(),
+				data.getPassWord());
+		// Navigate to Franchise Navigator
+		getHomePage(driver).clickOnNavigatorDropDown("Franchise Navigator");
+		// select Region from drop down
+		getFranchiseNavigator(driver).selectListOptionFromDropDownInBladder(
+				"Entity");
+		// Click on specific result in the option
+		getFranchiseNavigator(driver).clickOnSpecificResultInGrid("AARON, JAMES D JR Entity");
+		// Verify whether the entity name is displayed in the second level
+		// bladder
+		Assert.assertTrue(getFranchiseNavigator(driver)
+				.verifyRegionOpenedInNewBlade("AARON, JAMES D JR Entity"),
+				"AARON, JAMES D JR Entity entity Blade is not opened in second level blader");
+		// Click on specific result in the option
+		getFranchiseNavigator(driver).clickOnSpecificResultInGrid(
+				"CHARLESTON, TN. - LOVES");
+		// Verify whether the region name is displayed in the third level
+		// bladder
+		Assert.assertTrue(
+				getFranchiseNavigator(driver)
+						.verifyRegionOpenedInNewBlade(
+								"CHARLESTON, TN. - LOVES"),
+				"CHARLESTON, TN. - LOVES restraunt is not opened in third level blader");
+		// Navigate to PMO Navigator to close the bladders
+		getHomePage(driver).clickOnNavigatorDropDown("PMO Navigator");
 	}
 	
 

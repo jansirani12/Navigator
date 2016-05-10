@@ -60,16 +60,9 @@ public class FranchiseNavigator extends Common {
 				By.xpath("//span[contains(text(),'" + regionName
 						+ "')]/ancestor::tr[1]/td/input")).click();
 		Reporter.log("Click on the region - " + regionName + "<br/>");
+		shortWaitForPageLoadOffshore();
 	}
-
-	public void clickOnSpecificRegionInGrid(String regionNameBlade1) {
-		wait.until(ExpectedConditions.elementToBeClickable(By
-				.xpath("//span[contains(text(),'" + regionNameBlade1 + "')]")));
-		driver.findElement(By.xpath("//span[contains(text(),'"
-				+ regionNameBlade1 + "')]/ancestor::tr[1]/td/input"));
-		Reporter.log("Clcik on the Region One-" + regionNameBlade1 + "<br>");
-	}
-
+	
 	public boolean verifyRegionOpenedInNewBlade(String regionName) {
 		wait.until(ExpectedConditions.elementToBeClickable(driver
 				.findElement(By
@@ -142,8 +135,8 @@ public class FranchiseNavigator extends Common {
 				.isDisplayed();
 	}
 
-	public void closeBlade(int bladeIndex) {
-		waitForPageLoadOffshore();
+	/*public void closeBlade(int bladeIndex) {
+		shortWaitForPageLoadOffshore();
 		wait.until(ExpectedConditions.elementToBeClickable(By
 				.xpath("//div[@blade-id='blade" + bladeIndex
 						+ "']//span[contains(@class,'close-button')]")));
@@ -151,10 +144,10 @@ public class FranchiseNavigator extends Common {
 				By.xpath("//div[@blade-id='blade" + bladeIndex
 						+ "']//span[contains(@class,'close-button')]")).click();
 		Reporter.log("Close the blade '" + bladeIndex + "'<br/>");
-	}
+	}*/
 
 	public void clickOnDataDropDown() {
-		waitForPageLoadOffshore();
+		shortWaitForPageLoadOffshore();
 		wait.until(ExpectedConditions.elementToBeClickable(By
 				.xpath("(//span[@class='k-icon k-i-arrow-s'])[4]")));
 		driver.findElement(By.xpath("(//span[@class='k-icon k-i-arrow-s'])[4]"))

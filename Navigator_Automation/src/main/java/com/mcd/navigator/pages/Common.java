@@ -47,6 +47,7 @@ public abstract class Common {
 			break;
 		case "firefox":
 			FirefoxProfile ffprofile = new FirefoxProfile();
+			ffprofile.setPreference("javascript.enabled", true);
 			driver = new FirefoxDriver(ffprofile);
 			break;
 		case "chrome":
@@ -79,7 +80,17 @@ public abstract class Common {
 
 	public void waitForPageLoadOffshore() {
 		try {
-			(new WebDriverWait(driver, 30)).until(ExpectedConditions
+			(new WebDriverWait(driver, 240)).until(ExpectedConditions
+					.elementToBeClickable(By
+							.xpath("(//input[@name='WorkAroundForPageLoad']")));
+		} catch (Exception e) {
+			// Do nothing
+		}
+	}
+	
+	public void shortWaitForPageLoadOffshore() {
+		try {
+			(new WebDriverWait(driver, 60)).until(ExpectedConditions
 					.elementToBeClickable(By
 							.xpath("(//input[@name='WorkAroundForPageLoad']")));
 		} catch (Exception e) {
