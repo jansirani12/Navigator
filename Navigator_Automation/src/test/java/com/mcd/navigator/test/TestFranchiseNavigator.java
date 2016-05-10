@@ -98,6 +98,171 @@ public class TestFranchiseNavigator extends PageObjects {
 		// Verify the filter displays appropriate result
 		getFranchiseNavigator(driver)
 				.verifyFilterValueDisplaysAfterApplyingFilter("HEARTLAND");
+		// Click on Region Name filter button
+		getFranchiseNavigator(driver).clickOnRegionNameFilterButton();
+		// Select the filter by value from drop down
+		getFranchiseNavigator(driver).selectValueFromDropDownInFilter(1,
+				"Is equal to");
+		// Enter the filter value in the text box
+		getFranchiseNavigator(driver).enterValueToFilterName(1, "CHICAGO");
+		// Click on filter button
+		getFranchiseNavigator(driver).clickOnFilterButton();
+		getFranchiseNavigator(driver)
+				.verifyFilterValueDisplaysAfterApplyingFilter("CHICAGO");
+		getFranchiseNavigator(driver).clickOnRegionNameFilterButton();
+		// Select the filter by value from drop down
+		getFranchiseNavigator(driver).selectValueFromDropDownInFilter(1,
+				"Is equal to");
+		// Enter the filter value in the text box
+		getFranchiseNavigator(driver).enterValueToFilterName(1, "FLORIDA");
+		// Click on filter button
+		getFranchiseNavigator(driver).clickOnFilterButton();
+		getFranchiseNavigator(driver)
+				.verifyFilterValueDisplaysAfterApplyingFilter("FLORIDA");
+		getFranchiseNavigator(driver).clickOnRegionNameFilterButton();
+		// Select the filter by value from drop down
+		getFranchiseNavigator(driver).selectValueFromDropDownInFilter(1,
+				"Is equal to");
+		// Enter the filter value in the text box
+		getFranchiseNavigator(driver).enterValueToFilterName(1,
+				"GREAT SOUTHERN");
+		// Click on filter button
+		getFranchiseNavigator(driver).clickOnFilterButton();
+		getFranchiseNavigator(driver)
+				.verifyFilterValueDisplaysAfterApplyingFilter("GREAT SOUTHERN");
+		getFranchiseNavigator(driver).clickOnRegionNameFilterButton();
+		// Select the filter by value from drop down
+		getFranchiseNavigator(driver).selectValueFromDropDownInFilter(1,
+				"Is equal to");
+		// Enter the filter value in the text box
+		getFranchiseNavigator(driver).enterValueToFilterName(1,
+				"GREATER SOUTHWEST");
+		// Click on filter button
+		getFranchiseNavigator(driver).clickOnFilterButton();
+		getFranchiseNavigator(driver)
+				.verifyFilterValueDisplaysAfterApplyingFilter(
+						"GREATER SOUTHWEST");
+		getFranchiseNavigator(driver).clickOnRegionNameFilterButton();
+		// Select the filter by value from drop down
+		getFranchiseNavigator(driver).selectValueFromDropDownInFilter(1,
+				"Is equal to");
+		// Enter the filter value in the text box
+		getFranchiseNavigator(driver).enterValueToFilterName(1, "HAWAII");
+		// Click on filter button
+		getFranchiseNavigator(driver).clickOnFilterButton();
+		getFranchiseNavigator(driver)
+				.verifyFilterValueDisplaysAfterApplyingFilter("HAWAII");
+		getFranchiseNavigator(driver).clickOnRegionNameFilterButton();
+		// Select the filter by value from drop down
+		getFranchiseNavigator(driver).selectValueFromDropDownInFilter(1,
+				"Is equal to");
+		// Enter the filter value in the text box
+		getFranchiseNavigator(driver).enterValueToFilterName(1, "HEARTLAND");
+		// Click on filter button
+		getFranchiseNavigator(driver).clickOnFilterButton();
+		getFranchiseNavigator(driver)
+				.verifyFilterValueDisplaysAfterApplyingFilter("HEARTLAND");
+		getFranchiseNavigator(driver).clickOnRegionNameFilterButton();
+		// Select the filter by value from drop down
+		getFranchiseNavigator(driver).selectValueFromDropDownInFilter(1,
+				"Is equal to");
+		// Enter the filter value in the text box
+		getFranchiseNavigator(driver).enterValueToFilterName(1, "HOUSTON");
+		// Click on filter button
+		getFranchiseNavigator(driver).clickOnFilterButton();
+		getFranchiseNavigator(driver)
+				.verifyFilterValueDisplaysAfterApplyingFilter("HOUSTON");
+		getFranchiseNavigator(driver).clickOnRegionNameFilterButton();
+		// Select the filter by value from drop down
+		getFranchiseNavigator(driver).selectValueFromDropDownInFilter(1,
+				"Is equal to");
+		// Enter the filter value in the text box
+		getFranchiseNavigator(driver).enterValueToFilterName(1, "INDIANAPOLIS");
+		// Click on filter button
+		getFranchiseNavigator(driver).clickOnFilterButton();
+		getFranchiseNavigator(driver)
+				.verifyFilterValueDisplaysAfterApplyingFilter("INDIANAPOLIS");
+		getFranchiseNavigator(driver).clickOnRegionNameFilterButton();
+		// Select the filter by value from drop down
+		getFranchiseNavigator(driver).selectValueFromDropDownInFilter(1,
+				"Is equal to");
+		// Enter the filter value in the text box
+		getFranchiseNavigator(driver).enterValueToFilterName(1, "MICHIGAN");
+		// Click on filter button
+		getFranchiseNavigator(driver).clickOnFilterButton();
+		getFranchiseNavigator(driver)
+				.verifyFilterValueDisplaysAfterApplyingFilter("MICHIGAN");
+		getFranchiseNavigator(driver).clickOnRegionNameFilterButton();
+		// Select the filter by value from drop down
+		getFranchiseNavigator(driver).selectValueFromDropDownInFilter(1,
+				"Is equal to");
+		// Enter the filter value in the text box
+		getFranchiseNavigator(driver).enterValueToFilterName(1, "MIDWEST");
+		// Click on filter button
+		getFranchiseNavigator(driver).clickOnFilterButton();
+		getFranchiseNavigator(driver)
+				.verifyFilterValueDisplaysAfterApplyingFilter("MIDWEST");
+		getFranchiseNavigator(driver).clickOnRegionNameFilterButton();
+		// Select the filter by value from drop down
+		getFranchiseNavigator(driver).selectValueFromDropDownInFilter(1,
+				"Is equal to");
+		// Enter the filter value in the text box
+		getFranchiseNavigator(driver).enterValueToFilterName(1,
+				"NEW YORK METRO");
+		// Click on filter button
+		getFranchiseNavigator(driver).clickOnFilterButton();
+		getFranchiseNavigator(driver)
+				.verifyFilterValueDisplaysAfterApplyingFilter("NEW YORK METRO");
+		getFranchiseNavigator(driver)
+				.verifyFilterValueDisplaysAfterApplyingFilter("MIDWEST");
+		// Click on Region Name Filter Button
+		getFranchiseNavigator(driver).clickOnRegionNameFilterButton();
+		// Select the filter by value from drop down
+		getFranchiseNavigator(driver).selectValueFromDropDownInFilter(1,
+				"Is equal to");
+		// Enter the filter value in the text box
+		getFranchiseNavigator(driver).enterValueToFilterName(1, "OHIO");
+		// Click on filter button
+		getFranchiseNavigator(driver).clickOnFilterButton();
+		getFranchiseNavigator(driver)
+				.verifyFilterValueDisplaysAfterApplyingFilter("OHIO");
+		// Click on Region Name Filter Button
+		getFranchiseNavigator(driver).clickOnRegionNameFilterButton();
+		// Select the filter by value from drop down
+		getFranchiseNavigator(driver).selectValueFromDropDownInFilter(1,
+				"Is equal to");
+		// Enter the filter value in the text box
+		getFranchiseNavigator(driver).enterValueToFilterName(1,
+				"PACIFIC NORTHWEST");
+		// Click on filter button
+		getFranchiseNavigator(driver).clickOnFilterButton();
+		getFranchiseNavigator(driver)
+				.verifyFilterValueDisplaysAfterApplyingFilter(
+						"PACIFIC NORTHWEST");
+		// Click on Region Name Filter Button
+		getFranchiseNavigator(driver).clickOnRegionNameFilterButton();
+		// Select the filter by value from drop down
+		getFranchiseNavigator(driver).selectValueFromDropDownInFilter(1,
+				"Is equal to");
+		// Enter the filter value in the text box
+		getFranchiseNavigator(driver).enterValueToFilterName(1,
+				"PACIFIC SIERRA");
+		// Click on filter button
+		getFranchiseNavigator(driver).clickOnFilterButton();
+		getFranchiseNavigator(driver)
+				.verifyFilterValueDisplaysAfterApplyingFilter("PACIFIC SIERRA");
+		// Click on Region Name Filter Button
+		getFranchiseNavigator(driver).clickOnRegionNameFilterButton();
+		// Select the filter by value from drop down
+		getFranchiseNavigator(driver).selectValueFromDropDownInFilter(1,
+				"Is equal to");
+		// Enter the filter value in the text box
+		getFranchiseNavigator(driver).enterValueToFilterName(1,
+				"PACIFIC SIERRA");
+		// Click on filter button
+		getFranchiseNavigator(driver).clickOnFilterButton();
+		getFranchiseNavigator(driver)
+				.verifyFilterValueDisplaysAfterApplyingFilter("PACIFIC SIERRA");
 	}
 
 	@Test(testName = "Select Zone from Franchise navigator list and verify the zone's got displayed in first blader", description = "Select Zone from Franchise navigator list and verify the zone's got displayed in first blader", dataProvider = "TC_01", dataProviderClass = LoginPage_DataProvider.class, priority = 1)
@@ -211,6 +376,36 @@ public class TestFranchiseNavigator extends PageObjects {
 				"Business Review");
 	}
 
+	@Test(testName = "Verify that Third Level Blader is opened", description = "Verify that user is abe to opened third level blader", dataProvider = "TC_01", dataProviderClass = LoginPage_DataProvider.class, priority = 4)
+	@TestInfo(testCaseID = "TC 02", testCaseDescription = "Verify that user is abe to opened third level blader")
+	public void verifyThirdLevelBladerIsOpened(LoginPageData data) {
+		// Login into the application
+		getLoginPage(driver).loginIntoApplication(data.getUserName(),
+				data.getPassWord());
+		// Navigate to Franchise Navigator
+		getHomePage(driver).clickOnNavigatorDropDown("Franchise Navigator");
+		// select Region from drop down
+		getFranchiseNavigator(driver).selectListOptionFromDropDownInBladder(
+				"Region");
+		// Select the Region as Atlanta
+		getFranchiseNavigator(driver).clickOnSpecificResultInGrid("ATLANTA");
+		// Verify whether the region name is displayed in the second level
+		// bladder
+		Assert.assertTrue(getFranchiseNavigator(driver)
+				.verifyRegionOpenedInNewBlade("ATLANTA"),
+				"ATLANTA Region Blade is not opened in second level blader");
+		getFranchiseNavigator(driver).clickOnSpecificRegionInGrid(
+				"AARON, JAMES D JR");
+		// Verify whether the entity name is displayed in the third level
+		// bladder
+		Assert.assertTrue(
+				getFranchiseNavigator(driver)
+						.verifyRegionOpenedInNewBlade(
+								"AARON, JAMES D JR Entity"),
+				"AARON, JAMES D JR Entity is not opened in third level blader");
+		// Close the second blade opened
+		getFranchiseNavigator(driver).closeBlade(3);
+	}
 	@Test(testName = "Verify that Atlanta Region is selected", description = "Verify that user is abe to Atlanda Region in second lavel blader", dataProvider = "TC_01", dataProviderClass = LoginPage_DataProvider.class, priority = 4)
 	@TestInfo(testCaseID = "TC 02", testCaseDescription = "Verify that user is able to view Atlanta in second lavel blader")
 	public void verifyAtlantaRegioHeaderInBlader(LoginPageData data) {
@@ -229,9 +424,12 @@ public class TestFranchiseNavigator extends PageObjects {
 		Assert.assertTrue(getFranchiseNavigator(driver)
 				.verifyRegionOpenedInNewBlade("ATLANTA"),
 				"ATLANTA Region Blade is not opened in second level blader");
+		getFranchiseNavigator(driver).clickOnSpecificRegionInGrid(
+				"AARON, JAMES D JR");
 		// Close the second blade opened
 		getFranchiseNavigator(driver).closeBlade(2);
 	}
+
 
 	@Test(testName = "CliCk on East Zone in Blader one and verify East Zone is displayed in Header in Blader2", description = "Clcik on East Zone in Blader one and verify East Zone is displayed in Header in Blader2", dataProvider = "TC_01", dataProviderClass = LoginPage_DataProvider.class, priority = 5)
 	@TestInfo(testCaseID = "TC 06", testCaseDescription = "Select Zone from Franchise navigator list and verify the zone's got displayed in first blader")
@@ -254,6 +452,7 @@ public class TestFranchiseNavigator extends PageObjects {
 		// Close the second blade opened
 		getFranchiseNavigator(driver).closeBlade(2);
 	}
+	
 
 	@AfterMethod(alwaysRun = true)
 	public void tearDown() {

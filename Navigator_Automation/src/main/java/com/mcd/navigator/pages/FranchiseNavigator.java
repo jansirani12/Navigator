@@ -62,18 +62,25 @@ public class FranchiseNavigator extends Common {
 		Reporter.log("Click on the region - " + regionName + "<br/>");
 	}
 
+	public void clickOnSpecificRegionInGrid(String regionNameBlade1) {
+		wait.until(ExpectedConditions.elementToBeClickable(By
+				.xpath("//span[contains(text(),'" + regionNameBlade1 + "')]")));
+		driver.findElement(By.xpath("//span[contains(text(),'"
+				+ regionNameBlade1 + "')]/ancestor::tr[1]/td/input"));
+		Reporter.log("Clcik on the Region One-" + regionNameBlade1 + "<br>");
+	}
+
 	public boolean verifyRegionOpenedInNewBlade(String regionName) {
 		wait.until(ExpectedConditions.elementToBeClickable(driver
 				.findElement(By
-						.xpath("//div[@blade-id='blade2']/h1[contains(text(),'"
+						.xpath("//h1[contains(text(),'"
 								+ regionName + "')]"))));
 		Reporter.log("Verify whether the region name '" + regionName
 				+ "' is displayed in the second level bladder<br/>");
 		return driver.findElement(
-				By.xpath("//div[@blade-id='blade2']/h1[contains(text(),'"
+				By.xpath("//h1[contains(text(),'"
 						+ regionName + "')]")).isDisplayed();
 	}
-
 	public void clickOnRegionNameFilterButton() {
 		wait.until(ExpectedConditions.elementToBeClickable(By
 				.xpath("(//span[@class='k-icon k-filter'])[1]")));
